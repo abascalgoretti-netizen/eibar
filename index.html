@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>[hidden]{display:none!important}img{max-width:100%}</style>
-<title>Ibilbideak Eibar · Itinerarios de inclusión</title>
+<title>Itinerarios de inclusión · Eibar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800;900&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,6 +16,7 @@
   --warn-bg:#fff6e5; --warn-ink:#7a5410; --warn-line:#f0dfb8;
   --am-acogida:#5a6385; --am-diagnostico:#3b3fb5; --am-formacion:#6a2fa8; --am-orientlab:#001C93; --am-empleo:#CE004A;
   --am-seguimiento:#2f6f86; --am-prestaciones:#a8680f; --am-apoyo:#0b7a6c; --am-salud:#2d8249; --am-vivienda:#855634;
+  --am-emp_idea:#CE004A; --am-emp_aseso:#a3003b; --am-emp_marcha:#76002b;
   --shadow:0 1px 2px rgba(0,20,90,.06),0 6px 20px rgba(0,20,90,.06);
   --shadow-lg:0 14px 44px rgba(0,20,90,.2);
   --r:14px;
@@ -47,7 +48,6 @@ a{color:var(--blue-ink)}
 .wrap{max-width:1160px;margin:0 auto;padding-inline:20px}
 @media(max-width:520px){.wrap{padding-inline:16px}}
 
-/* top */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--surface);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;gap:14px;padding-block:10px;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:11px;min-width:0}
@@ -69,7 +69,6 @@ a{color:var(--blue-ink)}
 .view{display:none;padding-block:34px 70px}
 .view.on{display:block}
 
-/* needs */
 .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--magenta);margin:0 0 10px}
 .h1{font-size:clamp(28px,4.6vw,46px);line-height:1.05;letter-spacing:-.02em;font-weight:900;margin:0 0 12px}
 .lead{font-size:16px;color:var(--ink-soft);max-width:60ch;margin:0 0 26px}
@@ -94,12 +93,11 @@ a{color:var(--blue-ink)}
 .btn-p:disabled{opacity:.45;cursor:not-allowed;box-shadow:none}
 .btn-p .cnt{background:rgba(255,255,255,.25);border-radius:999px;padding:0 8px;font-size:12px}
 .btn-g{background:var(--surface);border:1px solid var(--line);color:var(--ink)}
-.linkish{border:0;background:none;color:var(--blue-ink);font-weight:600;text-decoration:underline;text-underline-offset:3px;padding:4px 0;font-size:13.5px}
+.linkish{border:0;background:none;color:var(--blue-ink);font-weight:600;text-decoration:underline;text-underline-offset:3px;padding:4px 0;font-size:13.5px;text-align:left}
 .start{margin-top:34px;display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--magenta);border-radius:12px;padding:16px 18px;max-width:760px}
 .start h3{margin:0 0 4px;font-size:16.5px;font-weight:800}
 .start p{margin:0;color:var(--ink-soft);font-size:13.8px}
 
-/* result */
 .res-head{display:flex;gap:14px;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;margin-bottom:22px}
 .res-head .h1{margin:0}
 .res-sec{padding-block:22px;border-top:1px solid var(--line)}
@@ -142,7 +140,6 @@ a{color:var(--blue-ink)}
 .saber p{margin:0;opacity:.85;font-size:13.5px;max-width:62ch}
 .saber .btn{background:#fff;color:#001C93}
 
-/* profiles */
 .pgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 @media(max-width:960px){.pgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:520px){.pgrid{grid-template-columns:1fr}}
@@ -153,7 +150,6 @@ a{color:var(--blue-ink)}
 .pcard h3{margin:0;font-size:15px;font-weight:800;line-height:1.2}
 .pcard p{margin:0;font-size:12.7px;color:var(--ink-soft);line-height:1.4}
 
-/* itinerary */
 .ihead{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap;margin-bottom:6px}
 .ihead h2{margin:0 0 3px;font-size:25px;font-weight:900;letter-spacing:-.02em}
 .ihead p{margin:0;color:var(--ink-soft);max-width:72ch;font-size:13.8px}
@@ -181,12 +177,11 @@ a{color:var(--blue-ink)}
 .node:hover{box-shadow:var(--shadow)}
 .node .nm{font-size:12.8px;font-weight:700;line-height:1.2}
 .pnote{margin-top:10px;font-size:11.8px;color:var(--ink-soft);background:var(--paper);border:1px dashed var(--line);border-radius:9px;padding:8px 10px;line-height:1.4}
+.pnote .linkish{font-size:11.8px;display:block;margin-top:4px}
 
-/* directory */
 .dir-tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
 .dir-tools input{flex:1;min-width:0;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:10px;padding:10px 12px;font:inherit}
 
-/* panel */
 .scrim{position:fixed;inset:0;background:rgba(10,14,40,.45);opacity:0;pointer-events:none;transition:opacity .2s;z-index:50}
 .scrim.show{opacity:1;pointer-events:auto}
 .panel{position:fixed;top:0;right:0;height:100%;width:min(460px,94vw);background:var(--surface);z-index:60;transform:translateX(102%);transition:transform .25s ease;box-shadow:var(--shadow-lg);display:flex;flex-direction:column}
@@ -198,11 +193,18 @@ a{color:var(--blue-ink)}
 .pclose svg{width:16px;height:16px}
 .pbody{overflow-y:auto;padding:16px 22px 30px;flex:1}
 .fs{margin-bottom:16px}
-.fs h4{margin:0 0 6px;font-family:'Montserrat';font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
+.fs h4{margin:0 0 6px;font-family:'Montserrat',system-ui,sans-serif;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);font-weight:700}
 .fs p{margin:0;font-size:13.6px}
+.eibox{background:var(--blue-soft);border-radius:12px;padding:12px 14px}
+.eibox h4{color:var(--blue-ink);display:flex;gap:6px;align-items:center}
+.eibox h4 svg{width:14px;height:14px}
+.fuera{border:1px dashed var(--line);border-radius:12px;padding:10px 14px}
+.fuera summary{cursor:pointer;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.fuera p{margin-top:8px}
 .crow{display:flex;gap:9px;align-items:flex-start;font-size:13.3px;margin:5px 0;user-select:text}
 .crow svg{width:15px;height:15px;flex:0 0 auto;margin-top:3px;color:var(--ink-soft)}
 .crow a{word-break:break-word}
+.cnote{font-size:12px;color:var(--ink-soft);margin:0 0 4px}
 .obox{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-ink);border-radius:10px;padding:10px 12px;font-size:12.8px}
 .lbox{background:var(--lan-soft);color:var(--lan);border-radius:10px;padding:10px 12px;font-size:13px;font-weight:600}
 
@@ -210,27 +212,25 @@ a{color:var(--blue-ink)}
 .foot .wrap{padding-block:22px 34px}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
 </style>
-
 </head>
 <body>
 <header class="top">
   <div class="wrap">
     <div class="brand"><div class="mk" aria-hidden="true"><i></i></div><div><b data-t="brand"></b><span data-t="brandsub"></span></div></div>
-    <nav class="tabs" aria-label="Secciones">
+    <nav class="tabs" id="tabs">
       <button id="tab-needs" data-view="needs" data-t="tabNeeds"></button>
       <button id="tab-itin" data-view="itin" data-t="tabItin"></button>
       <button id="tab-dir" data-view="dir" data-t="tabDir"></button>
     </nav>
-    <div class="lang" role="group" aria-label="Hizkuntza / Idioma">
-      <button id="lang-es" data-lang="es" aria-pressed="true">ES</button>
-      <button id="lang-eu" data-lang="eu" aria-pressed="false">EU</button>
+    <div class="lang" role="group" id="langgrp">
+      <button id="lang-es" data-lang="es" aria-pressed="true" lang="es">ES</button>
+      <button id="lang-eu" data-lang="eu" aria-pressed="false" lang="eu">EU</button>
     </div>
   </div>
 </header>
 <div class="notice"><div class="wrap"><span data-t="notice"></span> <b id="live-status"></b></div></div>
 
 <main>
-  <!-- 1 · NECESIDADES (portada) -->
   <section class="view wrap" id="v-needs">
     <p class="eyebrow" data-t="eyebrow"></p>
     <h1 class="h1" data-t="needsQ"></h1>
@@ -244,7 +244,6 @@ a{color:var(--blue-ink)}
     <div class="start"><div><h3 data-t="startQ"></h3><p id="start-txt"></p></div></div>
   </section>
 
-  <!-- 2 · RESULTADO SIMPLE -->
   <section class="view wrap" id="v-result">
     <div class="res-head">
       <div><p class="eyebrow" data-t="resEyebrow"></p><h1 class="h1" data-t="resTitle"></h1></div>
@@ -257,7 +256,6 @@ a{color:var(--blue-ink)}
     </div>
   </section>
 
-  <!-- 3 · SITUACIÓN (opcional) -->
   <section class="view wrap" id="v-profiles">
     <p class="eyebrow" data-t="profEyebrow"></p>
     <h1 class="h1" data-t="profQ"></h1>
@@ -265,27 +263,25 @@ a{color:var(--blue-ink)}
     <div class="pgrid" id="pgrid"></div>
   </section>
 
-  <!-- 4 · ITINERARIO COMPLETO -->
   <section class="view wrap" id="v-itin">
     <div class="ihead">
       <div><h2 id="itin-title"></h2><p id="itin-desc"></p></div>
-      <div class="ctrl">
-        <label class="sr" for="profile-sel" hidden>Perfil</label>
-        <select class="sel" id="profile-sel" aria-label="Situación"></select>
-      </div>
+      <div class="ctrl"><select class="sel" id="profile-sel"></select></div>
     </div>
     <div class="needbar" id="needbar" hidden></div>
     <p class="lbl-sm" data-t="trunk"></p>
     <div class="canvas"><div class="track" id="track"></div></div>
-    <p class="lbl-sm" data-t="supports"></p>
-    <p style="margin:-4px 0 8px;color:var(--ink-soft);font-size:13px;max-width:80ch" data-t="supportsDesc"></p>
-    <div class="canvas"><div class="track" id="track-s"></div></div>
+    <div id="sup-wrap">
+      <p class="lbl-sm" data-t="supports"></p>
+      <p style="margin:-4px 0 8px;color:var(--ink-soft);font-size:13px;max-width:80ch" data-t="supportsDesc"></p>
+      <div class="canvas"><div class="track" id="track-s"></div></div>
+    </div>
   </section>
 
-  <!-- 5 · DIRECTORIO -->
   <section class="view wrap" id="v-dir">
     <p class="eyebrow" data-t="dirEyebrow"></p>
     <h1 class="h1" data-t="dirTitle"></h1>
+    <p class="lead" data-t="dirLead"></p>
     <div class="dir-tools"><input id="dir-q" type="search" autocomplete="off"></div>
     <div class="cards" id="dir-cards"></div>
     <p class="lbl-sm" data-t="dirPending"></p>
@@ -301,190 +297,1202 @@ a{color:var(--blue-ink)}
     <div class="ty" id="p-type"></div>
     <h3 id="p-name"></h3>
     <div class="tags" id="p-tags"></div>
-    <button class="pclose" id="p-close" aria-label="Cerrar / Itxi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+    <button class="pclose" id="p-close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
   </div>
   <div class="pbody" id="p-body"></div>
 </aside>
 
 <!-- =====================================================================
-     DATOS  ·  Fuente: Google Sheet "MAPA DE RECURSOS E ITINERARIOS DE
-     INCLUSIÓN SOCIOLABORAL DE EIBAR (respuestas)" — 13 respuestas
-     (23/06/2026 – 03/09/2026). Para actualizar, editar SOLO este bloque.
+     DATOS BASE (v3 · 02/10/2026). Se usan si no hay conexión con el Excel.
+     Con conexión, la página lee en directo:
+       1) la hoja de respuestas del formulario (sin tocarla), y
+       2) la pestaña CORRECCIONES del mismo Google Sheet,
+     y aplica las correcciones encima.
      ===================================================================== -->
 <script id="data" type="application/json">
 {
-"meta":{"actualizado":"23/09/2026","respuestas":13,"periodo_es":"junio–septiembre 2026","periodo_eu":"2026ko ekaina–iraila"},
-"entidades":{
- "gizartekintza":{"real":true,"puerta":true,"nombre":"Servicios Sociales · Gizartekintza","tipo_es":"Ayuntamiento de Eibar","tipo_eu":"Eibarko Udala",
-  "dir":"Bista Eder 10, 4.º","tel":"943 708 440","email":"gerrasti@eibar.eus","web":"www.eibar.eus","acceso":["libre","cita","deriv"],"orient":[],
-  "ambitos":["acogida","diagnostico","prestaciones","apoyo","vivienda","salud","seguimiento"],
-  "que_es":"Primera acogida y atención de necesidades sociales: ayudas de emergencia social (AES), empadronamiento social, viviendas de urgencia social, tarjetas de alimentos, Servicio de Ayuda a Domicilio, educadoras familiares, clases de castellano y proyectos comunitarios. Incluye Andretxea (igualdad).",
-  "que_eu":"Lehen harrera eta gizarte-premien arreta: gizarte-larrialdiko laguntzak (GLL), gizarte-errolda, gizarte-larrialdiko etxebizitzak, elikagai-txartelak, etxez etxeko laguntza, familia-hezitzaileak, gaztelania eskolak eta komunitate-proiektuak. Andretxea (berdintasuna) barne."},
- "inmigracion":{"real":true,"puerta":true,"nombre":"Inmigración y Diversidad Cultural · Harreragunea","tipo_es":"Ayuntamiento de Eibar","tipo_eu":"Eibarko Udala",
-  "dir":"Bista Eder 10, 4.º","tel":"943 708 440","email":"immigrazioa@eibar.eus","web":"www.eibar.eus","acceso":["cita"],"orient":[],
-  "ambitos":["acogida","formacion","apoyo","salud"],
-  "que_es":"Harreragunea: primera acogida, información y orientación para personas recién llegadas. Sesiones de acogida, cursos intensivos de castellano, Empalabramiento, atención psicológica transcultural (Bidelagun) y atención ante delitos de odio o discriminación.",
-  "que_eu":"Harreragunea: iritsi berriei lehen harrera, informazioa eta orientazioa. Harrera-saioak, gaztelaniazko ikastaro trinkoak, Empalabramiento, arreta psikologiko transkulturala (Bidelagun) eta gorroto-delituen edo diskriminazioaren aurreko arreta."},
- "lanbide":{"real":true,"puerta":true,"nombre":"Lanbide · Servicio Vasco de Empleo","tipo_es":"Servicio público de empleo","tipo_eu":"Enplegu zerbitzu publikoa",
-  "dir":"Bittor Sarasketa 9","tel":"943 023 804","email":"amaia.fernandez@lanbide.eus","web":"www.lanbide.eus","acceso":["libre","cita","deriv"],"orient":["empleo"],
-  "ambitos":["acogida","diagnostico","orientlab","empleo","formacion","prestaciones"],
-  "que_es":"Orientación laboral, intermediación entre personas y empresas, formación para el empleo y asesoramiento para el autoempleo. Gestiona la RGI y el IMV. Hace el primer diagnóstico y el plan personalizado (PIPEI).",
-  "que_eu":"Lan-orientazioa, pertsonen eta enpresen arteko bitartekaritza, enplegurako prestakuntza eta autoenplegurako aholkularitza. DSBE eta BGD kudeatzen ditu. Lehen diagnostikoa eta plan pertsonalizatua (PIPEI) egiten ditu."},
- "daiteke":{"real":true,"puerta":false,"lanbide":"general","nombre":"Daiteke","tipo_es":"Servicio de orientación para el empleo","tipo_eu":"Enplegurako orientazio zerbitzua",
-  "dir":"Azitain Industrialdea 3 bis","tel":"747 486 286","email":"maria.alonso@daiteke.com","web":"www.daiteke.eus","acceso":["cita","deriv"],"orient":["empleo"],
-  "ambitos":["diagnostico","orientlab","formacion","empleo","apoyo"],
-  "que_es":"Servicio de orientación para el empleo vinculado a Lanbide, dirigido a toda la población: orientación, formación, intermediación con empresas y mejora de la empleabilidad. También apoyo en conciliación y empoderamiento.",
-  "que_eu":"Lanbiderekin lotutako enplegurako orientazio zerbitzua, herritar guztientzat: orientazioa, prestakuntza, enpresekin bitartekaritza eta enplegagarritasuna hobetzea. Kontziliazioan eta ahalduntzean ere laguntzen du."},
- "zabaltzen":{"real":true,"puerta":true,"lanbide":"cercano","nombre":"Zabaltzen Sartu","tipo_es":"Entidad del tercer sector","tipo_eu":"Hirugarren sektoreko erakundea",
-  "dir":"Azitain Industrialdea 3 bis","tel":"943 748 597 · 603 713 846","email":"yolandaur@zabaltzen.sartu.org","web":"zabaltzensartu.org","acceso":["libre","cita","deriv"],"orient":["empleo"],
-  "ambitos":["acogida","diagnostico","apoyo","orientlab","formacion","empleo","prestaciones","vivienda","salud","seguimiento"],
-  "que_es":"Servicio de orientación para el empleo vinculado a Lanbide, con un acompañamiento más cercano e integral: competencias básicas y técnicas, empoderamiento de mujeres, búsqueda activa de empleo, intermediación con empresas, autoempleo, trámites administrativos, acceso a vivienda y apoyo en cuidados (Zainbide). Hace de «bisagra» entre servicios sociales, empleo y salud.",
-  "que_eu":"Lanbiderekin lotutako enplegurako orientazio zerbitzua, laguntza hurbilago eta integralarekin: oinarrizko eta gaitasun teknikoak, emakumeen ahalduntzea, lan-bilaketa aktiboa, enpresekin bitartekaritza, autoenplegua, izapideak, etxebizitza eta zaintza (Zainbide). Gizarte zerbitzuen, enpleguaren eta osasunaren arteko «zubia» da."},
- "debegesa":{"real":true,"puerta":false,"nombre":"Debegesa","tipo_es":"Agencia de desarrollo comarcal","tipo_eu":"Eskualdeko garapen agentzia",
-  "dir":"Azitain Industrialdea 3 bis","tel":"670 427 733","email":"ealonso@debegesa.eus","web":"www.debegesa.eus","acceso":["libre","cita","deriv"],"orient":["empleo"],
-  "ambitos":["orientlab","formacion","empleo","vivienda"],
-  "que_es":"Programas de empleo e inclusión, orientación y acompañamiento, y asesoramiento para emprender. Gestiona ayudas para rehabilitar vivienda. Coordina la Red por la inclusión sociolaboral de Debabarrena. La inscripción suele hacerse a través de las entidades sociales y de empleo.",
-  "que_eu":"Enplegu- eta inklusio-programak, orientazioa eta akonpainamendua, eta ekintzailetzarako aholkularitza. Etxebizitza birgaitzeko laguntzak kudeatzen ditu. Debabarreneko Gizarteratze Sarea koordinatzen du. Izena ematea gizarte- eta enplegu-erakundeen bidez egin ohi da."},
- "armeria":{"real":true,"puerta":true,"nombre":"Armeria Eskola Elkartea","tipo_es":"Centro educativo y formativo","tipo_eu":"Hezkuntza eta prestakuntza zentroa",
-  "dir":"Isasi 36","tel":"648 420 589","email":"adlillarramendi@armeriaeskola.eus","web":"www.aee.eus","acceso":["libre"],"orient":["academica","empleo"],
-  "ambitos":["acogida","diagnostico","orientlab","formacion","empleo","apoyo","salud","seguimiento"],
-  "que_es":"Orientación educativa y profesional, itinerarios de empleabilidad, acompañamiento individual, formación técnica y en competencias, bienestar emocional, apoyo para emprender y Bolsa de Empleo con contacto directo con empresas.",
-  "que_eu":"Hezkuntza- eta lanbide-orientazioa, enplegagarritasun-ibilbideak, banakako akonpainamendua, prestakuntza teknikoa eta gaitasunetakoa, ongizate emozionala, ekintzailetzarako laguntza eta Enplegu Poltsa enpresekin harreman zuzenean."},
- "imfpb":{"real":true,"puerta":true,"nombre":"IMFPB Eibar OLHUI","tipo_es":"Centro educativo y formativo","tipo_eu":"Hezkuntza eta prestakuntza zentroa",
-  "dir":"Azitain 2","tel":"679 961 301 (FPB) · 637 031 312 (cursos)","email":"nmanzano@imfpbeibar.com · cursos@imfpbeibar.com","web":"imfpbeibar.com","acceso":["cita","deriv"],"orient":["academica","empleo"],
-  "ambitos":["formacion","orientlab","acogida"],
-  "que_es":"FP Básica y Programa de Escolarización Complementaria (PEC) para no dejar los estudios, y certificados de profesionalidad: mantenimiento de viviendas (fontanería, electricidad, climatización…), hostelería e informática de oficina.",
-  "que_eu":"Oinarrizko LH eta Eskolatze Osagarriko Programa (EOP) ikasketak ez uzteko, eta profesionaltasun-ziurtagiriak: etxebizitzen mantentzea, ostalaritza eta bulegoko informatika."},
- "cepa":{"real":true,"puerta":false,"nombre":"CEPA Eibar HHI · Educación de Personas Adultas","tipo_es":"Centro educativo","tipo_eu":"Hezkuntza zentroa",
-  "dir":"Isasi 39, bajo","tel":"943 208 856","email":"esti.epaeibar@gmail.com","web":"epaeibar.hezkuntza.net","acceso":["cita"],"orient":["academica"],
-  "ambitos":["formacion","acogida"],
-  "que_es":"Para mayores de 18 años: sacar la ESO, formación básica, castellano y euskera, competencias digitales y homologación de estudios. Tiene servicio de orientación, aula de informática y biblioteca.",
-  "que_eu":"18 urtetik gorakoentzat: DBH ateratzea, oinarrizko prestakuntza, gaztelania eta euskara, gaitasun digitalak eta ikasketen homologazioa. Orientazio zerbitzua, informatika gela eta liburutegia ditu."},
- "ftsi":{"real":true,"puerta":false,"nombre":"FTSI · Fundación Trabajadores de la Siderurgia Integral","tipo_es":"Entidad del tercer sector","tipo_eu":"Hirugarren sektoreko erakundea",
-  "dir":"Bista Eder 10","tel":"688 713 830","email":"orienta@ftsi.es","web":"www.ftsi.es","acceso":["libre","deriv"],"orient":["empleo"],
-  "ambitos":["orientlab","formacion","empleo"],
-  "que_es":"Proyectos de inserción sociolaboral: orientación, formación prelaboral y técnica, competencias digitales, castellano e intermediación laboral.",
-  "que_eu":"Gizarte- eta lan-txertatze proiektuak: orientazioa, lan-aurreko eta prestakuntza teknikoa, gaitasun digitalak, gaztelania eta lan-bitartekaritza."},
- "cruzroja":{"real":true,"puerta":true,"nombre":"Cruz Roja Eibar-Ermua · Gurutze Gorria","tipo_es":"Entidad del tercer sector","tipo_eu":"Hirugarren sektoreko erakundea",
-  "dir":"Artegieta 1","tel":"943 176 248","email":"sonia.guisasola@cruzroja.es","web":"www2.cruzroja.es","acceso":["cita","deriv"],"orient":["empleo"],
-  "ambitos":["acogida","orientlab","empleo","prestaciones","apoyo","salud","seguimiento"],
-  "que_es":"Primera acogida, Plan de Empleo (orientación e intermediación laboral), asesoría jurídica para personas migrantes y solicitantes de asilo, ayudas básicas (tarjetas de compra, pobreza energética, material escolar), apoyo escolar para menores de 6 a 16 años y apoyo psicológico.",
-  "que_eu":"Lehen harrera, Enplegu Plana (lan-orientazioa eta bitartekaritza), aholkularitza juridikoa migratzaileentzat eta asilo-eskatzaileentzat, oinarrizko laguntzak (erosketa-txartelak, energia-pobrezia, eskola-materiala), 6-16 urteko adingabeentzako eskola-laguntza eta laguntza psikologikoa."},
- "caritas":{"real":true,"puerta":true,"nombre":"Cáritas Gipuzkoa · Eibar","tipo_es":"Entidad del tercer sector","tipo_eu":"Hirugarren sektoreko erakundea",
-  "dir":"Toribio Etxeberria 24","tel":"676 531 292","email":"mendebalde2@caritasgi.org","web":"","acceso":["cita"],"orient":["empleo"],
-  "ambitos":["acogida","diagnostico","formacion","empleo","prestaciones","apoyo","vivienda"],
-  "que_es":"Acogida, escucha y valoración; itinerarios personalizados con acompañamiento continuo. Formación sociolaboral, empresas de inserción e intermediación laboral. Centros residenciales (Trintxer-Emeki, Sorabilla), programa Miriam para mujeres, programa socioeducativo Zubia y asesoría jurídica.",
-  "que_eu":"Harrera, entzutea eta balorazioa; ibilbide pertsonalizatuak etengabeko akonpainamenduarekin. Gizarte- eta lan-prestakuntza, gizarteratze-enpresak eta lan-bitartekaritza. Egoitza-zentroak (Trintxer-Emeki, Sorabilla), emakumeentzako Miriam programa, Zubia programa sozioedukatiboa eta aholkularitza juridikoa."},
- "osakidetza":{"real":true,"puerta":false,"nombre":"Osakidetza · Enfermería comunitaria","tipo_es":"Servicio público de salud","tipo_eu":"Osasun zerbitzu publikoa",
-  "dir":"Otaola Hiribidea 6-8","tel":"610 507 154","email":"raul.alvarezcelada@osakidetza.eus","web":"www.osakidetza.euskadi.eus","acceso":["libre"],"orient":[],
-  "ambitos":["salud","apoyo"],
-  "que_es":"Atención sanitaria en el centro de salud, en casa y en la comunidad; promoción de la salud y prevención (talleres, vacunación, hábitos saludables) y coordinación con servicios sociales y asociaciones. Deriva a salud mental y adicciones.",
-  "que_eu":"Osasun-arreta osasun-etxean, etxean eta komunitatean; osasunaren sustapena eta prebentzioa (tailerrak, txertaketa, ohitura osasungarriak) eta koordinazioa gizarte zerbitzuekin eta elkarteekin. Buru-osasunera eta adikzioetara bideratzen du."},
- "udalempleo":{"real":false,"nombre":"Área de Empleo del Ayuntamiento","tipo_es":"Ayuntamiento de Eibar","tipo_eu":"Eibarko Udala","ambitos":["orientlab","formacion"],"que_es":"Citada por otras entidades como agente de empleo y formación.","que_eu":"Beste erakunde batzuek enplegu- eta prestakuntza-eragile gisa aipatua."},
- "kalexka":{"real":false,"nombre":"Kalexka","tipo_es":"Entidad","tipo_eu":"Erakundea","ambitos":["apoyo","formacion"],"que_es":"Citada por Cruz Roja y Debegesa como destino de derivación.","que_eu":"Gurutze Gorriak eta Debegesak deribazio-helburu gisa aipatua."},
- "asocmigrantes":{"real":false,"nombre":"Asociaciones de personas migrantes","tipo_es":"Tejido comunitario","tipo_eu":"Komunitate-sarea","ambitos":["acogida","apoyo"],"que_es":"Redes de acogida y apoyo entre iguales, citadas por varias entidades.","que_eu":"Berdinen arteko harrera- eta laguntza-sareak, hainbat erakundek aipatuak."},
- "empresas":{"real":false,"nombre":"Empresas y empresas de inserción","tipo_es":"Tejido productivo","tipo_eu":"Ehun ekoizlea","ambitos":["empleo"],"que_es":"Destino final del itinerario. Cáritas gestiona empresas de inserción; falta mapear las empresas colaboradoras.","que_eu":"Ibilbidearen azken helmuga. Caritasek gizarteratze-enpresak kudeatzen ditu; enpresa laguntzaileak mapatzeke daude."},
- "etxebide":{"real":false,"nombre":"Etxebide · vivienda pública","tipo_es":"Gobierno Vasco","tipo_eu":"Eusko Jaurlaritza","ambitos":["vivienda"],"que_es":"El acceso a vivienda pública es competencia del Gobierno Vasco. Elemento orientativo: ninguna entidad lo ha descrito en el formulario.","que_eu":"Etxebizitza publikoa Eusko Jaurlaritzaren eskumena da. Elementu orientagarria."}
+"meta": {
+"actualizado": "02/10/2026",
+"respuestas": 13,
+"periodo_es": "junio–septiembre 2026",
+"periodo_eu": "2026ko ekaina–iraila"
 },
-"necesidades":[
- {"id":"orientarme","icon":"compass","fase":"acogida","es":"Orientarme","eu":"Orientazioa","sub_es":"No sé por dónde empezar","sub_eu":"Ez dakit nondik hasi",
-  "principal":["gizartekintza","lanbide","inmigracion"],"tambien":["cruzroja","caritas","zabaltzen"],
-  "nota_es":"Servicios Sociales y Lanbide son las dos puertas de entrada principales. Si acabas de llegar a Eibar, Harreragunea te da una primera acogida.",
-  "nota_eu":"Gizarte Zerbitzuak eta Lanbide dira sarrerako ate nagusiak. Eibarrera iritsi berria bazara, Harreragunean lehen harrera egingo dizute."},
- {"id":"idioma","icon":"chat","fase":"formacion","es":"Aprender el idioma","eu":"Hizkuntza ikastea","sub_es":"Castellano o euskera","sub_eu":"Gaztelania edo euskara",
-  "principal":["cepa","inmigracion","gizartekintza"],"tambien":["zabaltzen","ftsi","caritas"],
-  "nota_es":"Castellano: CEPA, cursos intensivos y Empalabramiento (Inmigración), clases de Servicios Sociales, FTSI, Zabaltzen Sartu y Cáritas. Euskera: CEPA, Servicios Sociales y Zabaltzen Sartu.",
-  "nota_eu":"Gaztelania: HHI, ikastaro trinkoak eta Empalabramiento (Immigrazioa), Gizarte Zerbitzuetako eskolak, FTSI, Zabaltzen Sartu eta Caritas. Euskara: HHI, Gizarte Zerbitzuak eta Zabaltzen Sartu."},
- {"id":"estudiar","icon":"cap","fase":"formacion","es":"Seguir estudiando","eu":"Ikasten jarraitzea","sub_es":"ESO, FP Básica u homologar un título","sub_eu":"DBH, Oinarrizko LH edo titulua homologatzea",
-  "principal":["cepa","imfpb","armeria"],"tambien":["gizartekintza","zabaltzen","daiteke","cruzroja","caritas"],
-  "nota_es":"Orientación académica. ESO para mayores de 18 años: CEPA. FP Básica y PEC: IMFPB. Para homologar estudios de otro país también te ayudan las entidades de la segunda fila.",
-  "nota_eu":"Orientazio akademikoa. 18 urtetik gorakoentzako DBH: HHI. Oinarrizko LH eta EOP: IMFPB. Beste herrialde bateko ikasketak homologatzeko bigarren lerroko erakundeek ere laguntzen dute."},
- {"id":"curso","icon":"tools","fase":"formacion","es":"Un curso para trabajar","eu":"Lanerako ikastaroa","sub_es":"Certificados de profesionalidad, competencias digitales…","sub_eu":"Profesionaltasun-ziurtagiriak, gaitasun digitalak…",
-  "principal":["imfpb","armeria","lanbide"],"tambien":["ftsi","zabaltzen","daiteke","debegesa","cruzroja","caritas","cepa"],
-  "nota_es":"Formación para el empleo: certificados de profesionalidad (IMFPB), formación técnica (Armeria Eskola) y cursos de Lanbide. Competencias digitales y formación prelaboral en el resto.",
-  "nota_eu":"Enplegurako prestakuntza: profesionaltasun-ziurtagiriak (IMFPB), prestakuntza teknikoa (Armeria Eskola) eta Lanbideko ikastaroak. Gaitasun digitalak eta lan-aurreko prestakuntza besteetan."},
- {"id":"trabajo","icon":"briefcase","fase":"orientlab","es":"Buscar trabajo","eu":"Lana bilatzea","sub_es":"Orientación laboral y ofertas","sub_eu":"Lan-orientazioa eta eskaintzak",
-  "principal":["lanbide","daiteke","zabaltzen"],"tambien":["armeria","ftsi","debegesa","cruzroja","caritas","imfpb"],
-  "nota_es":"Orientación para el empleo. Daiteke y Zabaltzen Sartu trabajan coordinadas con Lanbide: Daiteke para toda la población y Zabaltzen Sartu con un acompañamiento más cercano. Tú eliges; también te pueden derivar.",
-  "nota_eu":"Enplegurako orientazioa. Daiteke eta Zabaltzen Sartu Lanbiderekin koordinatuta ari dira: Daiteke herritar guztientzat eta Zabaltzen Sartu laguntza hurbilagoarekin. Zuk aukeratzen duzu; bideratu ere egin zaitzakete."},
- {"id":"emprender","icon":"rocket","fase":"empleo","es":"Emprender","eu":"Ekintzailetza","sub_es":"Crear mi propio negocio","sub_eu":"Nire negozioa sortzea",
-  "principal":["lanbide","debegesa","armeria"],"tambien":["zabaltzen","daiteke"],
-  "nota_es":"Asesoramiento para el autoempleo y la creación de empresas.","nota_eu":"Autoenplegurako eta enpresak sortzeko aholkularitza."},
- {"id":"ingresos","icon":"coins","fase":"prestaciones","es":"Una ayuda económica","eu":"Diru-laguntza","sub_es":"No tengo ingresos suficientes","sub_eu":"Ez dut nahikoa diru-sarrera",
-  "principal":["lanbide","gizartekintza"],"tambien":["cruzroja","caritas","zabaltzen"],
-  "nota_es":"La RGI y el IMV se piden en Lanbide. Las ayudas de emergencia social (AES) y las tarjetas de alimentos, en Servicios Sociales. Cruz Roja y Cáritas dan ayudas básicas.",
-  "nota_eu":"DSBE eta BGD Lanbiden eskatzen dira. Gizarte-larrialdiko laguntzak (GLL) eta elikagai-txartelak, Gizarte Zerbitzuetan. Gurutze Gorriak eta Caritasek oinarrizko laguntzak ematen dituzte."},
- {"id":"vivienda","icon":"home","fase":"vivienda","es":"Un lugar donde vivir","eu":"Bizilekua","sub_es":"Vivienda o emergencia","sub_eu":"Etxebizitza edo larrialdia",
-  "principal":["gizartekintza","zabaltzen","caritas"],"tambien":["cruzroja","debegesa"],
-  "nota_es":"Urgencia: viviendas de urgencia social y empadronamiento social (Servicios Sociales). Cáritas tiene centros residenciales. Varias entidades señalan la vivienda como la necesidad peor cubierta hoy en Eibar.",
-  "nota_eu":"Larrialdia: gizarte-larrialdiko etxebizitzak eta gizarte-errolda (Gizarte Zerbitzuak). Caritasek egoitza-zentroak ditu. Hainbat erakunderen ustez, etxebizitza da gaur egun Eibarren gutxien betetako beharra."},
- {"id":"salud","icon":"heart","fase":"salud","es":"Salud y apoyo emocional","eu":"Osasuna eta laguntza emozionala","sub_es":"Bienestar, salud mental","sub_eu":"Ongizatea, buru-osasuna",
-  "principal":["osakidetza","gizartekintza","inmigracion"],"tambien":["armeria","zabaltzen","cruzroja"],
-  "nota_es":"Tu centro de salud (Osakidetza) es la puerta a salud mental. Si el malestar tiene que ver con la migración, Inmigración ofrece atención psicológica transcultural (Bidelagun).",
-  "nota_eu":"Zure osasun-etxea (Osakidetza) da buru-osasunerako atea. Ondoeza migrazioarekin lotuta badago, Immigrazioak arreta psikologiko transkulturala eskaintzen du (Bidelagun)."},
- {"id":"papeles","icon":"file","fase":"apoyo","es":"Papeles y trámites","eu":"Paperak eta izapideak","sub_es":"Situación administrativa, asesoría jurídica","sub_eu":"Egoera administratiboa, aholkularitza juridikoa",
-  "principal":["inmigracion","cruzroja","zabaltzen"],"tambien":["caritas","lanbide","armeria"],
-  "nota_es":"Información sobre tu situación administrativa (Harreragunea), asesoría jurídica (Cruz Roja, Cáritas) y acompañamiento en trámites.",
-  "nota_eu":"Zure egoera administratiboari buruzko informazioa (Harreragunea), aholkularitza juridikoa (Gurutze Gorria, Caritas) eta izapideetan laguntza."},
- {"id":"apoyosocial","icon":"users","fase":"apoyo","es":"No estar solo/a","eu":"Ez bakarrik egotea","sub_es":"Redes de apoyo y acompañamiento","sub_eu":"Laguntza-sareak eta akonpainamendua",
-  "principal":["gizartekintza","cruzroja","caritas"],"tambien":["osakidetza","zabaltzen","inmigracion","armeria"],
-  "nota_es":"Acompañamiento, voluntariado, actividades comunitarias y redes de apoyo.","nota_eu":"Akonpainamendua, boluntariotza, komunitate-jarduerak eta laguntza-sareak."},
- {"id":"cuidados","icon":"family","fase":"apoyo","es":"Cuidados y conciliación","eu":"Zaintza eta kontziliazioa","sub_es":"Cuidar de mi familia y compaginarlo","sub_eu":"Familia zaindu eta uztartu",
-  "principal":["gizartekintza","zabaltzen"],"tambien":["cruzroja","caritas","daiteke"],
-  "nota_es":"Ayuda a domicilio y respiro familiar (Servicios Sociales), apoyo a personas cuidadoras (Zabaltzen Sartu · Zainbide). La conciliación es otra de las necesidades peor cubiertas según las entidades.",
-  "nota_eu":"Etxez etxeko laguntza eta familia-atsedena (Gizarte Zerbitzuak), zaintzaileentzako laguntza (Zabaltzen Sartu · Zainbide). Erakundeen ustez, kontziliazioa ere gutxien betetako beharretako bat da."}
+"ocultas": [
+"ftsi"
 ],
-"fases":{
- "acogida":{"tipo":"tronco","es":"Acogida · puerta de entrada","eu":"Harrera · sarrerako atea","agentes":["gizartekintza","lanbide","inmigracion","zabaltzen","cruzroja","caritas","armeria"]},
- "diagnostico":{"tipo":"tronco","es":"Diagnóstico y plan personal","eu":"Diagnostikoa eta plan pertsonala","agentes":["lanbide","gizartekintza","zabaltzen","daiteke","armeria","caritas"]},
- "formacion":{"tipo":"tronco","es":"Formación","eu":"Prestakuntza","agentes":["cepa","imfpb","armeria","ftsi","zabaltzen","daiteke","debegesa"]},
- "orientlab":{"tipo":"tronco","es":"Orientación para el empleo","eu":"Enplegurako orientazioa","agentes":["lanbide","daiteke","zabaltzen","armeria","ftsi","debegesa","cruzroja"]},
- "empleo":{"tipo":"tronco","es":"Empleo","eu":"Enplegua","agentes":["armeria","lanbide","debegesa","ftsi","caritas","empresas"]},
- "seguimiento":{"tipo":"tronco","es":"Seguimiento","eu":"Jarraipena","agentes":["gizartekintza","zabaltzen","armeria","cruzroja"]},
- "prestaciones":{"tipo":"soporte","es":"Ingresos y ayudas","eu":"Diru-sarrerak eta laguntzak","agentes":["lanbide","gizartekintza","cruzroja","caritas"]},
- "apoyo":{"tipo":"soporte","es":"Apoyo social y trámites","eu":"Gizarte-laguntza eta izapideak","agentes":["gizartekintza","inmigracion","cruzroja","caritas","zabaltzen","asocmigrantes"]},
- "salud":{"tipo":"soporte","es":"Salud y bienestar","eu":"Osasuna eta ongizatea","agentes":["osakidetza","gizartekintza","inmigracion","zabaltzen"]},
- "vivienda":{"tipo":"soporte","es":"Vivienda","eu":"Etxebizitza","agentes":["gizartekintza","zabaltzen","caritas","debegesa","etxebide"]}
+"entidades": {
+"gizartekintza": {
+"puerta": true,
+"src_bj": "Portalea (Bista Eder 10, 4.ª). Primera acogida y atención social; ayudas de emergencia social (AES); empadronamiento social; viviendas de urgencia social; tarjetas de alimentos; Servicio de Ayuda a Domicilio; educación familiar; clases de castellano; proyectos comunitarios. Andretxea (igualdad).",
+"src_bk": "",
+"nombre_es": "Servicios Sociales del Ayuntamiento",
+"nombre_eu": "Udaleko Gizarte Zerbitzuak (Gizartekintza)",
+"tipo_es": "Ayuntamiento de Eibar",
+"tipo_eu": "Eibarko Udala",
+"dir_es": "Portalea · Bista Eder 10, 4.ª planta",
+"dir_eu": "Portalea · Bista Eder 10, 4. solairua",
+"horario_es": "Lunes a viernes, 9:00–14:00 (en verano, 9:00–13:00)",
+"horario_eu": "Astelehenetik ostiralera, 9:00–14:00 (udan, 9:00–13:00)",
+"tel": "943 708 440",
+"email": "gizartekintza@eibar.eus",
+"web": "www.eibar.eus",
+"acceso": [
+"libre",
+"cita",
+"deriv"
+],
+"resumen_es": "Primera acogida y atención social para toda la ciudadanía.",
+"resumen_eu": "Lehen harrera eta gizarte-arreta herritar guztientzat.",
+"eibar_es": "Primera acogida y atención social; ayudas de emergencia social (AES); empadronamiento social; viviendas de urgencia social; tarjetas de alimentos; Servicio de Ayuda a Domicilio; educación familiar; clases de castellano; proyectos comunitarios. Incluye Andretxea (igualdad).",
+"eibar_eu": "Lehen harrera eta gizarte-arreta; gizarte-larrialdiko laguntzak (GLL); gizarte-errolda; gizarte-larrialdiko etxebizitzak; elikagai-txartelak; etxez etxeko laguntza zerbitzua; familia-hezkuntza; gaztelania eskolak; komunitate-proiektuak. Andretxea (berdintasuna) barne.",
+"real": true,
+"excel": true,
+"orient": []
 },
-"perfiles":[
- {"id":"general","icon":"compass","es":"Recorrido general","eu":"Ibilbide orokorra","desc_es":"El recorrido habitual, sin describir tu situación. Se resalta a partir de lo que has marcado que necesitas.","desc_eu":"Ohiko ibilbidea, zure egoera deskribatu gabe. Markatu dituzun beharren arabera nabarmentzen da.",
-  "tronco":["acogida","diagnostico","formacion","orientlab","empleo","seguimiento"],"soporte":["prestaciones","apoyo","salud","vivienda"]},
- {"id":"ldd","icon":"clock","es":"Llevo tiempo sin trabajo","eu":"Denbora daramat lanik gabe","desc_es":"Más de un año sin empleo, a menudo con más de 45 años. Reactivarse, recualificarse y tener acompañamiento.","desc_eu":"Urtebete baino gehiago lanik gabe, askotan 45 urtetik gora. Berraktibatu, birkualifikatu eta laguntza izan.",
-  "tronco":["acogida","diagnostico","formacion","orientlab","empleo","seguimiento"],"soporte":["prestaciones","apoyo","salud"],
-  "notas":{"diagnostico":{"es":"Lanbide elabora el plan personalizado (PIPEI); Daiteke, Zabaltzen Sartu y Armeria Eskola lo refuerzan.","eu":"Lanbidek plan pertsonalizatua (PIPEI) egiten du; Daitekek, Zabaltzen Sartuk eta Armeria Eskolak indartzen dute."},
-          "formacion":{"es":"Recualificación y competencias digitales.","eu":"Birkualifikazioa eta gaitasun digitalak."}}},
- {"id":"joven","icon":"sprout","es":"Soy joven y busco mi primera oportunidad","eu":"Gaztea naiz eta lehen aukera bilatzen dut","desc_es":"Sin terminar los estudios o sin experiencia. Una segunda oportunidad para formarse y trabajar.","desc_eu":"Ikasketak amaitu gabe edo esperientziarik gabe. Prestatzeko eta lan egiteko bigarren aukera.",
-  "tronco":["acogida","diagnostico","formacion","orientlab","empleo","seguimiento"],"soporte":["apoyo","salud"],
-  "destacados":{"formacion":["imfpb","cepa","armeria"],"acogida":["imfpb","armeria","gizartekintza"]},
-  "notas":{"formacion":{"es":"Orientación académica: PEC y FP Básica (IMFPB), ESO para adultos (CEPA).","eu":"Orientazio akademikoa: EOP eta Oinarrizko LH (IMFPB), helduentzako DBH (HHI)."},
-          "acogida":{"es":"Muchas veces llegan derivados desde los centros educativos.","eu":"Askotan ikastetxeetatik bideratuta iristen dira."}}},
- {"id":"migrante","icon":"globe","es":"Acabo de llegar a Eibar","eu":"Eibarrera iritsi berria naiz","desc_es":"El idioma, el padrón y los papeles marcan el comienzo del recorrido.","desc_eu":"Hizkuntza, errolda eta paperak dira ibilbidearen hasiera.",
-  "tronco":["acogida","diagnostico","formacion","orientlab","empleo","seguimiento"],"soporte":["apoyo","prestaciones","vivienda","salud"],
-  "destacados":{"acogida":["inmigracion","gizartekintza","cruzroja","caritas","asocmigrantes"],"formacion":["cepa","inmigracion","ftsi","zabaltzen"]},
-  "notas":{"acogida":{"es":"Harreragunea (Inmigración) da la primera acogida; Servicios Sociales tramita el empadronamiento social.","eu":"Harreragunean (Immigrazioa) lehen harrera egiten da; Gizarte Zerbitzuek gizarte-errolda izapidetzen dute."},
-          "formacion":{"es":"Castellano y euskera, homologación de estudios y competencias prelaborales.","eu":"Gaztelania eta euskara, ikasketen homologazioa eta lan-aurreko gaitasunak."},
-          "vivienda":{"es":"La vivienda es hoy el principal obstáculo del itinerario, según varias entidades.","eu":"Etxebizitza da gaur egun ibilbidearen oztopo nagusia, hainbat erakunderen arabera."}}},
- {"id":"mujer","icon":"venus","es":"Mujer que quiere acceder a un empleo","eu":"Enplegua lortu nahi duen emakumea","desc_es":"A menudo con más de 45 años o con responsabilidades familiares. Empoderamiento y conciliación son clave.","desc_eu":"Askotan 45 urtetik gora edo familia-erantzukizunekin. Ahalduntzea eta kontziliazioa dira gakoak.",
-  "tronco":["acogida","diagnostico","formacion","orientlab","empleo","seguimiento"],"soporte":["apoyo","prestaciones","salud"],
-  "destacados":{"apoyo":["zabaltzen","gizartekintza","caritas","cruzroja"]},
-  "notas":{"apoyo":{"es":"Empoderamiento de mujeres (Zabaltzen Sartu, Daiteke), Andretxea (Servicios Sociales) y programa Miriam (Cáritas).","eu":"Emakumeen ahalduntzea (Zabaltzen Sartu, Daiteke), Andretxea (Gizarte Zerbitzuak) eta Miriam programa (Caritas)."},
-          "orientlab":{"es":"La conciliación condiciona la búsqueda y pide acompañamiento sostenido.","eu":"Kontziliazioak bilaketa baldintzatzen du eta laguntza iraunkorra eskatzen du."}}},
- {"id":"discapacidad","icon":"access","es":"Tengo una discapacidad","eu":"Desgaitasuna dut","desc_es":"El itinerario combina apoyos, salud y empleo con apoyo.","desc_eu":"Ibilbideak laguntzak, osasuna eta laguntzadun enplegua uztartzen ditu.",
-  "tronco":["acogida","diagnostico","formacion","orientlab","empleo","seguimiento"],"soporte":["prestaciones","apoyo","salud"],
-  "notas":{"empleo":{"es":"Empleo con apoyo o centro especial de empleo: ninguna entidad del formulario lo ofrece. Tramo por completar.","eu":"Laguntzadun enplegua edo enplegu-zentro berezia: inkestako erakunderik ez. Osatzeko dago."}}},
- {"id":"prestaciones","icon":"coins","es":"Cobro la RGI, el IMV o ayudas","eu":"DSBE, BGD edo laguntzak jasotzen ditut","desc_es":"La ayuda económica va unida a un plan de activación e inclusión.","desc_eu":"Diru-laguntza aktibazio eta inklusio plan bati lotuta dago.",
-  "tronco":["acogida","diagnostico","orientlab","formacion","empleo","seguimiento"],"soporte":["prestaciones","apoyo","salud"],
-  "destacados":{"diagnostico":["lanbide","gizartekintza","zabaltzen","daiteke"]},
-  "notas":{"prestaciones":{"es":"RGI e IMV en Lanbide; AES en Servicios Sociales.","eu":"DSBE eta BGD Lanbiden; GLL Gizarte Zerbitzuetan."}}},
- {"id":"varias","icon":"lifebuoy","es":"Tengo varias necesidades a la vez","eu":"Hainbat behar ditut aldi berean","desc_es":"Dinero, vivienda, salud, papeles… todo junto. Hace falta que los servicios se coordinen.","desc_eu":"Dirua, etxebizitza, osasuna, paperak… dena batera. Zerbitzuek koordinatu behar dute.",
-  "tronco":["acogida","diagnostico","formacion","orientlab","empleo","seguimiento"],"soporte":["prestaciones","apoyo","salud","vivienda"],
-  "destacados":{"acogida":["gizartekintza","zabaltzen","cruzroja","caritas"],"seguimiento":["zabaltzen","gizartekintza"]},
-  "notas":{"acogida":{"es":"Zabaltzen Sartu hace de «bisagra» entre servicios sociales, empleo y salud; el recorrido rara vez es lineal.","eu":"Zabaltzen Sartu gizarte zerbitzuen, enpleguaren eta osasunaren arteko «zubia» da; ibilbidea gutxitan da lineala."},
-          "empleo":{"es":"El empleo no siempre es lo primero: a veces toca antes la salud o la vivienda.","eu":"Enplegua ez da beti lehena: batzuetan osasuna edo etxebizitza dira lehenik."}}},
- {"id":"sinhogar","icon":"home","es":"No tengo dónde vivir","eu":"Ez dut non bizi","desc_es":"Sin alojamiento estable. Lo primero son la vivienda y las necesidades básicas.","desc_eu":"Bizileku egonkorrik gabe. Lehenik etxebizitza eta oinarrizko beharrak.",
-  "tronco":["acogida","diagnostico","orientlab","empleo","seguimiento"],"soporte":["vivienda","prestaciones","apoyo","salud"],
-  "destacados":{"acogida":["gizartekintza","caritas","cruzroja"],"vivienda":["gizartekintza","caritas","zabaltzen","etxebide"]},
-  "notas":{"vivienda":{"es":"Viviendas de urgencia social (Servicios Sociales) y centros residenciales de Cáritas (Trintxer-Emeki, Sorabilla).","eu":"Gizarte-larrialdiko etxebizitzak (Gizarte Zerbitzuak) eta Caritasen egoitza-zentroak (Trintxer-Emeki, Sorabilla)."}}}
+"inmigracion": {
+"puerta": true,
+"src_bj": "",
+"src_bk": "",
+"nombre_es": "Inmigración y Diversidad Cultural",
+"nombre_eu": "Immigrazioa eta Kultura Aniztasuna",
+"tipo_es": "Ayuntamiento de Eibar · Servicios Sociales",
+"tipo_eu": "Eibarko Udala · Gizarte Zerbitzuak",
+"dir_es": "Portalea · Bista Eder 10, 4.ª planta",
+"dir_eu": "Portalea · Bista Eder 10, 4. solairua",
+"tel": "943 708 440",
+"email": "immigrazioa@eibar.eus",
+"web": "www.eibar.eus",
+"acceso": [
+"cita"
+],
+"resumen_es": "Programas para personas migrantes: acogida, castellano, apoyo psicosocial y orientación sobre residencia.",
+"resumen_eu": "Migratzaileentzako programak: harrera, gaztelania, laguntza psikosoziala eta bizilekuari buruzko orientazioa.",
+"eibar_es": "En Portalea, con cita previa: sesiones de acogida «Eibarren Bizi»; orientación sobre residencia y nacionalidad; cursos intensivos de castellano y Empalabramiento; atención psicosocial transcultural (Bidelagun); atención ante delitos de odio y discriminación; actividades interculturales y sensibilización contra el racismo.",
+"eibar_eu": "Portalean, aurretiko hitzorduarekin: «Eibarren Bizi» harrera-saioak; bizileku eta nazionalitateari buruzko orientazioa; gaztelaniazko ikastaro trinkoak eta Empalabramiento; arreta psikosozial transkulturala (Bidelagun); gorroto-delituen eta diskriminazioaren aurreko arreta; kulturarteko jarduerak eta arrazakeriaren aurkako sentsibilizazioa.",
+"real": true,
+"excel": true,
+"orient": []
+},
+"harreragunea": {
+"excel": false,
+"puerta": true,
+"derivado_de": "inmigracion",
+"nombre_es": "Harreragunea · Acogida a nuevos vecinos y vecinas",
+"nombre_eu": "Harreragunea · Bizilagun berrien harrera",
+"tipo_es": "Ayuntamiento de Eibar",
+"tipo_eu": "Eibarko Udala",
+"dir_es": "Ayuntamiento (Udaletxea) · Untzaga plaza 1",
+"dir_eu": "Udaletxea · Untzaga plaza 1",
+"tel": "010 · 943 708 400",
+"email": "pegora@eibar.eus",
+"web": "www.eibar.eus",
+"contacto_es": "Atención ciudadana del Ayuntamiento (Pegora)",
+"contacto_eu": "Udaleko herritarren arreta (Pegora)",
+"resumen_es": "Oficina de acogida para todas las personas que llegan a vivir a Eibar.",
+"resumen_eu": "Eibarrera bizitzera datozen pertsona guztientzako harrera-bulegoa.",
+"eibar_es": "En el Ayuntamiento. Al empadronarte, te dan información y orientación general: cómo funciona el municipio, qué servicios hay y cómo llegar a ellos. También orientan sobre la situación administrativa y sobre las sesiones de acogida.",
+"eibar_eu": "Udaletxean. Erroldatzean, informazio eta orientazio orokorra ematen dizute: udalerriak nola funtzionatzen duen, zer zerbitzu dauden eta nola iritsi haietara. Egoera administratiboari eta harrera-saioei buruz ere orientatzen dute.",
+"real": true,
+"acceso": [],
+"orient": []
+},
+"lanbide": {
+"puerta": true,
+"validar": true,
+"src_bj": "Oficina de Eibar (Bittor Sarasketa 9). Orientación laboral y plan personalizado (PIPEI), intermediación con empresas, formación para el empleo, asesoramiento para el autoempleo, RGI e IMV.",
+"src_bk": "",
+"orient": [
+"empleo"
+],
+"nombre_es": "Lanbide · Servicio Vasco de Empleo",
+"nombre_eu": "Lanbide · Euskal Enplegu Zerbitzua",
+"tipo_es": "Servicio público de empleo · Oficina de Eibar",
+"tipo_eu": "Enplegu zerbitzu publikoa · Eibarko bulegoa",
+"dir_es": "Bittor Sarasketa 9",
+"dir_eu": "Bittor Sarasketa 9",
+"tel": "943 023 804",
+"email": "",
+"web": "www.lanbide.eus",
+"acceso": [
+"libre",
+"cita",
+"deriv"
+],
+"resumen_es": "Servicio público de empleo: orientación, ofertas, formación y prestaciones (RGI, IMV).",
+"resumen_eu": "Enplegu zerbitzu publikoa: orientazioa, eskaintzak, prestakuntza eta prestazioak (DSBE, BGD).",
+"eibar_es": "Oficina de Eibar: orientación laboral, intermediación entre personas y empresas, formación para el empleo, asesoramiento para el autoempleo, y gestión de la RGI y el IMV.",
+"eibar_eu": "Eibarko bulegoa: lan-orientazioa, pertsonen eta enpresen arteko bitartekaritza, enplegurako prestakuntza, autoenplegurako aholkularitza, eta DSBE eta BGD kudeatzea.",
+"real": true,
+"excel": true
+},
+"daiteke": {
+"lanbide": "general",
+"src_bj": "Atiende en Debegesa (Azitain 3 bis) y en Armeria Eskola (Isasi 36). Orientación para el empleo, formación, asesoramiento e intermediación laboral.",
+"src_bk": "",
+"orient": [
+"empleo"
+],
+"nombre_es": "Daiteke",
+"nombre_eu": "Daiteke",
+"tipo_es": "Servicio de orientación para el empleo",
+"tipo_eu": "Enplegurako orientazio zerbitzua",
+"dir_es": "Debegesa (Azitain Industrialdea 3 bis) y Armeria Eskola (Isasi 36)",
+"dir_eu": "Debegesa (Azitain industrialdea 3 bis) eta Armeria Eskola (Isasi 36)",
+"tel": "943 430 312",
+"email": "daiteke@daiteke.eus",
+"web": "www.daiteke.eus",
+"acceso": [
+"cita",
+"deriv"
+],
+"resumen_es": "Orientación para el empleo, formación e intermediación laboral, para toda la población.",
+"resumen_eu": "Enplegurako orientazioa, prestakuntza eta lan-bitartekaritza, herritar guztientzat.",
+"eibar_es": "Atiende en Debegesa (Azitain Industrialdea 3 bis) y en Armeria Eskola (Isasi 36). Orientación para el empleo, formación, asesoramiento e intermediación laboral.",
+"eibar_eu": "Debegesan (Azitain industrialdea 3 bis) eta Armeria Eskolan (Isasi 36) artatzen du. Enplegurako orientazioa, prestakuntza, aholkularitza eta lan-bitartekaritza.",
+"real": true,
+"excel": true,
+"puerta": false
+},
+"zabaltzen": {
+"lanbide": "cercano",
+"src_bj": "Atiende en Debegesa (Azitain 3 bis). En Eibar: orientación para personas en situación de vulnerabilidad (derivación de Lanbide, con cita), procesos de empoderamiento de mujeres, competencias básicas y transversales, e intermediación con empresas.",
+"src_bk": "El resto de servicios de la entidad (acceso a vivienda, apoyo a personas cuidadoras-Zainbide, trámites, autoempleo) no se prestan en Eibar",
+"orient": [
+"empleo"
+],
+"nombre_es": "Zabaltzen Sartu",
+"nombre_eu": "Zabaltzen Sartu",
+"tipo_es": "Entidad del tercer sector",
+"tipo_eu": "Hirugarren sektoreko erakundea",
+"dir_es": "En Debegesa · Azitain Industrialdea 3 bis",
+"dir_eu": "Debegesan · Azitain industrialdea 3 bis",
+"tel": "943 748 597",
+"email": "zabaltzen@zabaltzen.sartu.org",
+"web": "zabaltzensartu.org",
+"acceso": [
+"libre",
+"cita",
+"deriv"
+],
+"resumen_es": "Acompañamiento cercano hacia el empleo para personas en situación de vulnerabilidad.",
+"resumen_eu": "Zaurgarritasun-egoeran dauden pertsonei enplegurako laguntza hurbila.",
+"eibar_es": "Atiende en Debegesa (Azitain Industrialdea 3 bis). En Eibar: orientación para personas en situación de vulnerabilidad (derivadas por Lanbide, con cita previa), procesos de empoderamiento de mujeres, competencias básicas y transversales, e intermediación con empresas.",
+"eibar_eu": "Debegesan artatzen du (Azitain industrialdea 3 bis). Eibarren: zaurgarritasun-egoeran dauden pertsonentzako orientazioa (Lanbidek bideratuta, aurretiko hitzorduarekin), emakumeak ahalduntzeko prozesuak, oinarrizko eta zeharkako gaitasunak, eta enpresekin bitartekaritza.",
+"fuera_es": "La entidad ofrece otros servicios que no se prestan en Eibar: acceso a vivienda, apoyo a personas cuidadoras (Zainbide), acompañamiento en trámites y asesoramiento para el autoempleo.",
+"fuera_eu": "Erakundeak Eibarren ematen ez diren beste zerbitzu batzuk ere baditu: etxebizitza eskuratzea, zaintzaileei laguntza (Zainbide), izapideetan laguntza eta autoenplegurako aholkularitza.",
+"real": true,
+"excel": true,
+"puerta": false
+},
+"debegesa": {
+"src_bj": "Sede en Eibar (Azitain 3 bis), ámbito Debabarrena. Atención directa: ayudas para rehabilitar vivienda. Además impulsa y coordina programas de empleo e inclusión con las entidades del territorio y coordina la Red por la inclusión sociolaboral de Debabarrena. A sus programas se accede a través de esas entidades y de Lanbide.",
+"src_bk": "",
+"orient": [
+"empleo"
+],
+"nombre_es": "Debegesa · Agencia de desarrollo de Debabarrena",
+"nombre_eu": "Debegesa · Debabarreneko garapen agentzia",
+"tipo_es": "Agencia de desarrollo comarcal",
+"tipo_eu": "Eskualdeko garapen agentzia",
+"dir_es": "Azitain Industrialdea 3 bis",
+"dir_eu": "Azitain industrialdea 3 bis",
+"tel": "943 820 110",
+"email": "",
+"web": "www.debegesa.eus",
+"acceso": [
+"libre",
+"cita",
+"deriv"
+],
+"resumen_es": "Asesora para montar tu negocio y coordina programas de empleo e inclusión en la comarca.",
+"resumen_eu": "Negozioa sortzeko aholkularitza ematen du eta eskualdeko enplegu- eta inklusio-programak koordinatzen ditu.",
+"eibar_es": "Sede en Eibar (Azitain Industrialdea 3 bis), para toda Debabarrena. Atención directa: asesoramiento para montar tu negocio y Oficina de Vivienda. Además impulsa y coordina programas de empleo e inclusión con las entidades del territorio y coordina la Red por la inclusión sociolaboral de Debabarrena. A esos programas se accede a través de las entidades y de Lanbide.",
+"eibar_eu": "Egoitza Eibarren (Azitain industrialdea 3 bis), Debabarrena osorako. Arreta zuzena: negozioa sortzeko aholkularitza eta Etxebizitza bulegoa. Gainera, lurraldeko erakundeekin batera enplegu- eta inklusio-programak bultzatu eta koordinatzen ditu, eta Debabarreneko Gizarteratze Sarea koordinatzen du. Programa horietara erakunde horien eta Lanbideren bidez sartzen da.",
+"real": true,
+"excel": true,
+"puerta": false
+},
+"etxebizitza": {
+"excel": false,
+"derivado_de": "debegesa",
+"nombre_es": "Oficina de Vivienda (Debegesa)",
+"nombre_eu": "Etxebizitza bulegoa (Debegesa)",
+"tipo_es": "Debegesa · Rehabilitación, alquiler y energía",
+"tipo_eu": "Debegesa · Birgaikuntza, alokairua eta energia",
+"dir_es": "Azitain Industrialdea 3 bis",
+"dir_eu": "Azitain industrialdea 3 bis",
+"horario_es": "Lunes a viernes, 8:00–16:00",
+"horario_eu": "Astelehenetik ostiralera, 8:00–16:00",
+"tel": "943 820 110",
+"email": "",
+"web": "www.debegesa.eus",
+"resumen_es": "Información y ayuda sobre alquiler, bono social eléctrico y térmico, y ayudas para rehabilitar la vivienda.",
+"resumen_eu": "Alokairuari, gizarte-bonu elektriko eta termikoari eta etxebizitza birgaitzeko laguntzei buruzko informazioa eta laguntza.",
+"eibar_es": "En Debegesa, de lunes a viernes de 8:00 a 16:00. Alquiler: información sobre los programas del Gobierno Vasco y municipales (como Bizilagun o Gaztelagun), para personas inquilinas y propietarias. Etxebide: información y ayuda en la gestión. Bono social: información y asesoramiento sobre el bono social eléctrico y térmico, y ayuda para entender las facturas de luz y gas y reducir el gasto. Rehabilitación: ayudas para rehabilitar viviendas y edificios (para personas propietarias y comunidades de vecinos). Energía: información sobre renovables y rehabilitación sostenible.",
+"eibar_eu": "Debegesan, astelehenetik ostiralera 8:00etatik 16:00etara. Alokairua: Eusko Jaurlaritzaren eta udalen programei buruzko informazioa (Bizilagun edo Gaztelagun, adibidez), maizter eta jabeentzat. Etxebide: informazioa eta kudeaketan laguntza. Gizarte-bonua: gizarte-bonu elektrikoari eta termikoari buruzko informazioa eta aholkularitza, eta argi- eta gas-fakturak ulertzeko eta gastua murrizteko laguntza. Birgaikuntza: etxebizitzak eta eraikinak birgaitzeko laguntzak (jabeentzat eta auzo-komunitateentzat). Energia: energia berriztagarriei eta birgaitze jasangarriari buruzko informazioa.",
+"real": true,
+"puerta": false,
+"acceso": [],
+"orient": []
+},
+"armeria": {
+"puerta": true,
+"src_bj": "Orientación educativa y profesional, acompañamiento individualizado, itinerarios de empleabilidad, formación para personas desempleadas y colectivos vulnerables, bienestar emocional y Bolsa de Empleo.",
+"src_bk": "",
+"orient": [
+"academica",
+"empleo"
+],
+"nombre_es": "Armeria Eskola Elkartea",
+"nombre_eu": "Armeria Eskola Elkartea",
+"tipo_es": "Centro educativo y formativo",
+"tipo_eu": "Hezkuntza eta prestakuntza zentroa",
+"dir_es": "Isasi 36",
+"dir_eu": "Isasi 36",
+"horario_es": "Lunes a jueves, 8:00–17:00; viernes, 8:00–15:30",
+"horario_eu": "Astelehenetik ostegunera, 8:00–17:00; ostiraletan, 8:00–15:30",
+"tel": "943 203 244",
+"email": "elkartea@armeriaeskola.eus",
+"web": "www.aee.eus",
+"acceso": [
+"libre"
+],
+"resumen_es": "Orientación educativa y profesional, formación y Bolsa de Empleo.",
+"resumen_eu": "Hezkuntza- eta lanbide-orientazioa, prestakuntza eta Enplegu Poltsa.",
+"eibar_es": "Orientación educativa y profesional, acompañamiento individualizado, itinerarios de empleabilidad, formación para personas desempleadas y colectivos vulnerables, bienestar emocional y Bolsa de Empleo.",
+"eibar_eu": "Hezkuntza- eta lanbide-orientazioa, banakako akonpainamendua, enplegagarritasun-ibilbideak, langabeentzako eta kolektibo zaurgarrientzako prestakuntza, ongizate emozionala eta Enplegu Poltsa.",
+"real": true,
+"excel": true
+},
+"imfpb": {
+"puerta": true,
+"src_bj": "Azitain 2 (instituto municipal). FP Básica y Programa de Escolarización Complementaria (PEC). Certificados de profesionalidad en mantenimiento de viviendas, hostelería e informática de oficina.",
+"src_bk": "",
+"orient": [
+"academica",
+"empleo"
+],
+"nombre_es": "Instituto Municipal de FP Básica (IMFPB Azitain)",
+"nombre_eu": "Oinarrizko Lanbide Heziketako Udal Institutua (OLHUI Azitain)",
+"tipo_es": "Centro educativo y formativo",
+"tipo_eu": "Hezkuntza eta prestakuntza zentroa",
+"dir_es": "Azitain 2",
+"dir_eu": "Azitain 2",
+"horario_es": "8:00–15:00",
+"horario_eu": "8:00–15:00",
+"tel": "943 208 126",
+"email": "info@imfpbeibar.com",
+"web": "imfpbeibar.com",
+"acceso": [
+"cita",
+"deriv"
+],
+"resumen_es": "FP Básica, Programa de Escolarización Complementaria y certificados de profesionalidad.",
+"resumen_eu": "Oinarrizko LH, Eskolatze Osagarriko Programa eta profesionaltasun-ziurtagiriak.",
+"eibar_es": "En Azitain 2 (instituto municipal): FP Básica y Programa de Escolarización Complementaria (PEC), y certificados de profesionalidad en mantenimiento de viviendas, hostelería e informática de oficina.",
+"eibar_eu": "Azitain 2n (udal institutua): Oinarrizko LH eta Eskolatze Osagarriko Programa (EOP), eta profesionaltasun-ziurtagiriak etxebizitzen mantentzean, ostalaritzan eta bulegoko informatikan.",
+"real": true,
+"excel": true
+},
+"cepa": {
+"src_bj": "Isasi 39, bajo. Para mayores de 18 años: título de ESO, formación básica, castellano y euskera para personas de origen extranjero, servicio de orientación, aula de informática y biblioteca.",
+"src_bk": "",
+"orient": [
+"academica"
+],
+"nombre_es": "CEPA Eibar · Educación de Personas Adultas",
+"nombre_eu": "Eibarko HHI · Helduen Hezkuntza",
+"tipo_es": "Centro público de educación de personas adultas",
+"tipo_eu": "Helduen hezkuntzako ikastetxe publikoa",
+"dir_es": "Isasi 39, bajo",
+"dir_eu": "Isasi 39, behea",
+"tel": "943 208 856",
+"email": "012634aa@hezkuntza.net",
+"web": "epaeibar.hezkuntza.net",
+"acceso": [
+"cita"
+],
+"resumen_es": "Para mayores de 18 años: título de ESO, formación básica, castellano y euskera.",
+"resumen_eu": "18 urtetik gorakoentzat: DBHko titulua, oinarrizko prestakuntza, gaztelania eta euskara.",
+"eibar_es": "Para mayores de 18 años: título de ESO, formación básica, castellano y euskera para personas de origen extranjero, servicio de orientación, aula de informática y biblioteca.",
+"eibar_eu": "18 urtetik gorakoentzat: DBHko titulua, oinarrizko prestakuntza, gaztelania eta euskara jatorri atzerritarreko pertsonentzat, orientazio zerbitzua, informatika gela eta liburutegia.",
+"real": true,
+"excel": true,
+"puerta": false
+},
+"cruzroja": {
+"puerta": true,
+"src_bj": "Oficina local (Artegieta 1), que también cubre Ermua. Primera acogida con asesoría jurídica para personas migrantes y solicitantes de asilo; Plan de Empleo (orientación e intermediación laboral); ayudas básicas (tarjetas de compra, pobreza energética, material escolar, juguetes); apoyo escolar para menores de 6 a 16 años.",
+"src_bk": "",
+"orient": [
+"empleo"
+],
+"nombre_es": "Cruz Roja Eibar-Ermua",
+"nombre_eu": "Gurutze Gorria Eibar-Ermua",
+"tipo_es": "Entidad del tercer sector",
+"tipo_eu": "Hirugarren sektoreko erakundea",
+"dir_es": "Artegieta 1",
+"dir_eu": "Artegieta 1",
+"tel": "943 176 248",
+"email": "eibarermua@cruzroja.es",
+"web": "www.cruzroja.es",
+"acceso": [
+"cita",
+"deriv"
+],
+"resumen_es": "Primera acogida, asesoría jurídica para personas migrantes, Plan de Empleo y ayudas básicas.",
+"resumen_eu": "Lehen harrera, migratzaileentzako aholkularitza juridikoa, Enplegu Plana eta oinarrizko laguntzak.",
+"eibar_es": "Oficina local (Artegieta 1), que también atiende a Ermua. Primera acogida con asesoría jurídica para personas migrantes y solicitantes de asilo; Plan de Empleo (orientación e intermediación laboral); ayudas básicas (tarjetas de compra, pobreza energética, material escolar, juguetes); apoyo escolar para menores de 6 a 16 años.",
+"eibar_eu": "Tokiko bulegoa (Artegieta 1), Ermua ere artatzen duena. Lehen harrera, migratzaileentzako eta asilo-eskatzaileentzako aholkularitza juridikoarekin; Enplegu Plana (lan-orientazioa eta -bitartekaritza); oinarrizko laguntzak (erosketa-txartelak, energia-pobrezia, eskola-materiala, jostailuak); 6 eta 16 urte bitarteko adingabeentzako eskola-laguntza.",
+"real": true,
+"excel": true
+},
+"caritas": {
+"puerta": true,
+"src_bj": "Equipo de Cáritas en Eibar (Toribio Etxeberria 24): acogida, escucha y valoración con cita previa, y acompañamiento del itinerario personalizado.",
+"src_bk": "Recursos de Cáritas Gipuzkoa fuera de Eibar, por derivación: centros residenciales Trintxer-Emeki (Pasaia) y Sorabilla (Andoain), programa Miriam, programa Zubia, empresas de inserción y formación sociolaboral, asesoría jurídica.",
+"nombre_es": "Cáritas Eibar",
+"nombre_eu": "Caritas Eibar",
+"tipo_es": "Cáritas Gipuzkoa · Entidad del tercer sector",
+"tipo_eu": "Gipuzkoako Caritas · Hirugarren sektoreko erakundea",
+"dir_es": "Parroquia de San Andrés · Toribio Etxebarria 24",
+"dir_eu": "San Andres parrokia · Toribio Etxebarria 24",
+"horario_es": "Cita previa: lunes de 10:00 a 12:00, en el 943 202 509",
+"horario_eu": "Aurretiko hitzordua: astelehenetan, 10:00etatik 12:00etara, 943 202 509 telefonoan",
+"tel": "943 202 509",
+"email": "mendebalde2@caritasgi.org",
+"web": "www.caritasgipuzkoa.org",
+"acceso": [
+"cita"
+],
+"resumen_es": "Acogida, escucha y acompañamiento personalizado, con cita previa.",
+"resumen_eu": "Harrera, entzutea eta akonpainamendu pertsonalizatua, aurretiko hitzorduarekin.",
+"eibar_es": "Equipo de Cáritas en Eibar (Parroquia de San Andrés, Toribio Etxebarria 24): acogida, escucha y valoración con cita previa, y acompañamiento del itinerario personalizado.",
+"eibar_eu": "Caritasen Eibarko taldea (San Andres parrokia, Toribio Etxebarria 24): harrera, entzutea eta balorazioa aurretiko hitzorduarekin, eta ibilbide pertsonalizatuaren akonpainamendua.",
+"fuera_es": "Recursos de Cáritas Gipuzkoa fuera de Eibar, por derivación: centros residenciales Trintxer-Emeki (Pasaia) y Sorabilla (Andoain), programa Miriam para mujeres, programa socioeducativo Zubia, empresas de inserción y formación sociolaboral, y asesoría jurídica.",
+"fuera_eu": "Gipuzkoako Caritasen baliabideak Eibartik kanpo, deribazio bidez: Trintxer-Emeki (Pasaia) eta Sorabilla (Andoain) egoitza-zentroak, emakumeentzako Miriam programa, Zubia programa sozioedukatiboa, gizarteratze-enpresak eta gizarte- eta lan-prestakuntza, eta aholkularitza juridikoa.",
+"real": true,
+"excel": true,
+"orient": []
+},
+"osakidetza": {
+"src_bj": "Enfermería comunitaria (Otaola 6-8). Talleres y charlas de educación para la salud, vacunación, detección precoz, proyectos comunitarios con colectivos vulnerables y coordinación con servicios sociales, centros educativos y asociaciones.",
+"src_bk": "",
+"nombre_es": "Osakidetza · Enfermería comunitaria",
+"nombre_eu": "Osakidetza · Komunitateko erizaintza",
+"tipo_es": "Servicio público de salud",
+"tipo_eu": "Osasun zerbitzu publikoa",
+"dir_es": "Otaola Hiribidea 6-8",
+"dir_eu": "Otaola hiribidea 6-8",
+"horario_es": "Cita en tu centro de salud: 900 20 30 50 o por internet",
+"horario_eu": "Hitzordua zure osasun-etxean: 900 20 30 50 edo internet bidez",
+"tel": "",
+"email": "",
+"web": "www.osakidetza.euskadi.eus",
+"acceso": [
+"libre"
+],
+"resumen_es": "Salud y prevención en la comunidad. Para cualquier problema de salud, empieza por tu centro de salud.",
+"resumen_eu": "Osasuna eta prebentzioa komunitatean. Edozein osasun-arazotarako, hasi zure osasun-etxean.",
+"eibar_es": "Enfermería comunitaria: talleres y charlas de educación para la salud, vacunación, detección precoz, proyectos comunitarios con colectivos vulnerables y coordinación con servicios sociales, centros educativos y asociaciones. Para cualquier problema de salud, también de salud mental, empieza por tu centro de salud.",
+"eibar_eu": "Komunitateko erizaintza: osasun-hezkuntzako tailerrak eta hitzaldiak, txertaketa, detekzio goiztiarra, kolektibo zaurgarriekin komunitate-proiektuak eta koordinazioa gizarte-zerbitzuekin, ikastetxeekin eta elkarteekin. Edozein osasun-arazotarako, baita buru-osasunerako ere, hasi zure osasun-etxean.",
+"real": true,
+"excel": true,
+"puerta": false,
+"orient": []
+},
+"udalempleo": {
+"real": false,
+"excel": false,
+"nombre_es": "Área de Empleo del Ayuntamiento",
+"nombre_eu": "Udaleko Enplegu Saila",
+"tipo_es": "Ayuntamiento de Eibar",
+"tipo_eu": "Eibarko Udala",
+"resumen_es": "Otras entidades la citan como agente de empleo y formación.",
+"resumen_eu": "Beste erakunde batzuek enplegu- eta prestakuntza-eragile gisa aipatzen dute.",
+"eibar_es": "Otras entidades la citan como agente de empleo y formación.",
+"eibar_eu": "Beste erakunde batzuek enplegu- eta prestakuntza-eragile gisa aipatzen dute."
+},
+"kalexka": {
+"real": false,
+"excel": false,
+"nombre_es": "Kalexka",
+"nombre_eu": "Kalexka",
+"tipo_es": "Asociación socioeducativa",
+"tipo_eu": "Elkarte sozioedukatiboa",
+"resumen_es": "Cruz Roja y Debegesa la citan como destino de derivación.",
+"resumen_eu": "Gurutze Gorriak eta Debegesak deribazio-helburu gisa aipatzen dute.",
+"eibar_es": "Cruz Roja y Debegesa la citan como destino de derivación.",
+"eibar_eu": "Gurutze Gorriak eta Debegesak deribazio-helburu gisa aipatzen dute."
+},
+"asocmigrantes": {
+"real": false,
+"excel": false,
+"nombre_es": "Asociaciones de personas migrantes",
+"nombre_eu": "Migratzaileen elkarteak",
+"tipo_es": "Tejido comunitario",
+"tipo_eu": "Komunitate-sarea",
+"resumen_es": "Redes de acogida y apoyo entre iguales, citadas por varias entidades.",
+"resumen_eu": "Berdinen arteko harrera- eta laguntza-sareak, hainbat erakundek aipatuak.",
+"eibar_es": "Redes de acogida y apoyo entre iguales, citadas por varias entidades.",
+"eibar_eu": "Berdinen arteko harrera- eta laguntza-sareak, hainbat erakundek aipatuak."
+},
+"empresas": {
+"real": false,
+"excel": false,
+"nombre_es": "Empresas",
+"nombre_eu": "Enpresak",
+"tipo_es": "Tejido productivo",
+"tipo_eu": "Ehun ekoizlea",
+"resumen_es": "Destino final del itinerario. Falta mapear las empresas colaboradoras.",
+"resumen_eu": "Ibilbidearen azken helmuga. Enpresa laguntzaileak mapatzeke daude.",
+"eibar_es": "Destino final del itinerario. Falta mapear las empresas colaboradoras.",
+"eibar_eu": "Ibilbidearen azken helmuga. Enpresa laguntzaileak mapatzeke daude."
+}
+},
+"necesidades": [
+{
+"id": "orientarme",
+"icon": "compass",
+"fase": "acogida",
+"es": "Orientarme",
+"eu": "Orientazioa",
+"sub_es": "No sé por dónde empezar",
+"sub_eu": "Ez dakit nondik hasi",
+"principal": [
+"gizartekintza",
+"harreragunea",
+"lanbide"
+],
+"tambien": [
+"cruzroja",
+"caritas",
+"inmigracion"
+],
+"nota_es": "Servicios Sociales y Lanbide son las dos puertas de entrada principales. Si acabas de empadronarte en Eibar, Harreragunea (en el Ayuntamiento) te informa y te orienta.",
+"nota_eu": "Gizarte Zerbitzuak eta Lanbide dira sarrerako ate nagusiak. Eibarren erroldatu berria bazara, Harreragunean (Udaletxean) informazioa eta orientazioa emango dizute."
+},
+{
+"id": "idioma",
+"icon": "chat",
+"fase": "formacion",
+"es": "Aprender el idioma",
+"eu": "Hizkuntza ikastea",
+"sub_es": "Castellano o euskera",
+"sub_eu": "Gaztelania edo euskara",
+"principal": [
+"cepa",
+"inmigracion",
+"gizartekintza"
+],
+"tambien": [],
+"nota_es": "Castellano: CEPA (para personas de origen extranjero), cursos intensivos y Empalabramiento (Inmigración) y clases de Servicios Sociales. Euskera: CEPA.",
+"nota_eu": "Gaztelania: HHI (jatorri atzerritarreko pertsonentzat), ikastaro trinkoak eta Empalabramiento (Immigrazioa) eta Gizarte Zerbitzuetako eskolak. Euskara: HHI."
+},
+{
+"id": "estudiar",
+"icon": "cap",
+"fase": "formacion",
+"es": "Seguir estudiando",
+"eu": "Ikasten jarraitzea",
+"sub_es": "ESO, FP Básica o retomar los estudios",
+"sub_eu": "DBH, Oinarrizko LH edo ikasketak berriz hastea",
+"principal": [
+"cepa",
+"imfpb",
+"armeria"
+],
+"tambien": [],
+"nota_es": "Orientación académica. ESO para mayores de 18 años: CEPA. FP Básica y PEC: IMFPB. Orientación educativa y profesional: Armeria Eskola.",
+"nota_eu": "Orientazio akademikoa. 18 urtetik gorakoentzako DBH: HHI. Oinarrizko LH eta EOP: OLHUI. Hezkuntza- eta lanbide-orientazioa: Armeria Eskola."
+},
+{
+"id": "curso",
+"icon": "tools",
+"fase": "formacion",
+"es": "Un curso para trabajar",
+"eu": "Lanerako ikastaroa",
+"sub_es": "Certificados de profesionalidad y formación para el empleo",
+"sub_eu": "Profesionaltasun-ziurtagiriak eta enplegurako prestakuntza",
+"principal": [
+"imfpb",
+"armeria",
+"lanbide"
+],
+"tambien": [
+"daiteke",
+"zabaltzen"
+],
+"nota_es": "Formación para el empleo: certificados de profesionalidad (IMFPB), formación para personas desempleadas (Armeria Eskola) y cursos de Lanbide. Daiteke también forma, y Zabaltzen Sartu trabaja competencias básicas y transversales.",
+"nota_eu": "Enplegurako prestakuntza: profesionaltasun-ziurtagiriak (OLHUI), langabeentzako prestakuntza (Armeria Eskola) eta Lanbideren ikastaroak. Daitekek ere prestakuntza ematen du, eta Zabaltzen Sartuk oinarrizko eta zeharkako gaitasunak lantzen ditu."
+},
+{
+"id": "trabajo",
+"icon": "briefcase",
+"fase": "orientlab",
+"es": "Buscar trabajo",
+"eu": "Lana bilatzea",
+"sub_es": "Orientación laboral y ofertas",
+"sub_eu": "Lan-orientazioa eta eskaintzak",
+"principal": [
+"lanbide",
+"daiteke",
+"zabaltzen"
+],
+"tambien": [
+"armeria",
+"cruzroja"
+],
+"nota_es": "Orientación para el empleo. Daiteke atiende a toda la población. Zabaltzen Sartu acompaña de forma más cercana a personas en situación de vulnerabilidad que deriva Lanbide.",
+"nota_eu": "Enplegurako orientazioa. Daitekek herritar guztiak artatzen ditu. Zabaltzen Sartuk laguntza hurbilagoa ematen die Lanbidek bideratutako zaurgarritasun-egoeran dauden pertsonei."
+},
+{
+"id": "emprender",
+"icon": "rocket",
+"fase": "empleo",
+"es": "Montar mi negocio",
+"eu": "Nire negozioa sortzea",
+"sub_es": "Emprender por cuenta propia",
+"sub_eu": "Norberaren kontura ekitea",
+"principal": [
+"debegesa",
+"lanbide"
+],
+"tambien": [],
+"tarjetas": {
+"debegesa": {
+"es": "Asesoramiento para montar tu negocio. Te ayudamos a empezar y te guiamos en cada paso.",
+"eu": "Negozioa sortzeko aholkularitza. Hasten lagunduko dizugu eta urrats bakoitzean gidatuko zaitugu."
+},
+"lanbide": {
+"es": "Asesoramiento para el autoempleo.",
+"eu": "Autoenplegurako aholkularitza."
+}
+},
+"nota_es": "Si quieres montar tu propio negocio, empieza por Debegesa: te asesora y te acompaña en cada paso.",
+"nota_eu": "Zure negozioa sortu nahi baduzu, hasi Debegesan: aholkularitza ematen dizu eta urrats bakoitzean laguntzen dizu."
+},
+{
+"id": "ingresos",
+"icon": "coins",
+"fase": "prestaciones",
+"es": "Una ayuda económica",
+"eu": "Diru-laguntza",
+"sub_es": "No tengo ingresos suficientes",
+"sub_eu": "Ez dut nahikoa diru-sarrera",
+"principal": [
+"lanbide",
+"gizartekintza"
+],
+"tambien": [
+"cruzroja",
+"etxebizitza"
+],
+"nota_es": "La RGI y el IMV se piden en Lanbide. Las ayudas de emergencia social (AES) y las tarjetas de alimentos, en Servicios Sociales. Cruz Roja da ayudas básicas. Para el bono social eléctrico y térmico, la Oficina de Vivienda.",
+"nota_eu": "DSBE eta BGD Lanbiden eskatzen dira. Gizarte-larrialdiko laguntzak (GLL) eta elikagai-txartelak, Gizarte Zerbitzuetan. Gurutze Gorriak oinarrizko laguntzak ematen ditu. Gizarte-bonu elektriko eta termikorako, Etxebizitza bulegoa."
+},
+{
+"id": "vivienda",
+"icon": "home",
+"fase": "vivienda",
+"es": "Un lugar donde vivir",
+"eu": "Bizilekua",
+"sub_es": "Alquiler, ayudas o una urgencia",
+"sub_eu": "Alokairua, laguntzak edo larrialdia",
+"principal": [
+"gizartekintza",
+"etxebizitza"
+],
+"tambien": [
+"caritas"
+],
+"nota_es": "Urgencia: viviendas de urgencia social y empadronamiento social (Servicios Sociales). Alquiler, programas del Gobierno Vasco (Etxebide, Bizilagun, Gaztelagun) y bono social: Oficina de Vivienda. Fuera de Eibar, Cáritas tiene centros residenciales a los que se llega por derivación. Varias entidades señalan la vivienda como la necesidad peor cubierta hoy en Eibar.",
+"nota_eu": "Larrialdia: gizarte-larrialdiko etxebizitzak eta gizarte-errolda (Gizarte Zerbitzuak). Alokairua, Eusko Jaurlaritzaren programak (Etxebide, Bizilagun, Gaztelagun) eta gizarte-bonua: Etxebizitza bulegoa. Eibartik kanpo, Caritasek egoitza-zentroak ditu, deribazio bidez. Hainbat erakunderen ustez, etxebizitza da gaur egun Eibarren gutxien betetako beharra."
+},
+{
+"id": "salud",
+"icon": "heart",
+"fase": "salud",
+"es": "Salud y apoyo emocional",
+"eu": "Osasuna eta laguntza emozionala",
+"sub_es": "Bienestar, salud mental",
+"sub_eu": "Ongizatea, buru-osasuna",
+"principal": [
+"osakidetza",
+"inmigracion"
+],
+"tambien": [
+"gizartekintza",
+"armeria"
+],
+"nota_es": "Tu centro de salud (Osakidetza) es la puerta de entrada, también para la salud mental. Si el malestar tiene que ver con la migración, Inmigración ofrece atención psicosocial transcultural (Bidelagun).",
+"nota_eu": "Zure osasun-etxea (Osakidetza) da sarrerako atea, baita buru-osasunerako ere. Ondoeza migrazioarekin lotuta badago, Immigrazioak arreta psikosozial transkulturala eskaintzen du (Bidelagun)."
+},
+{
+"id": "papeles",
+"icon": "file",
+"fase": "apoyo",
+"es": "Papeles y trámites",
+"eu": "Paperak eta izapideak",
+"sub_es": "Situación administrativa, asesoría jurídica",
+"sub_eu": "Egoera administratiboa, aholkularitza juridikoa",
+"principal": [
+"inmigracion",
+"harreragunea",
+"cruzroja"
+],
+"tambien": [
+"caritas"
+],
+"nota_es": "Orientación sobre residencia y nacionalidad, con cita (Inmigración); información general al empadronarte (Harreragunea); asesoría jurídica para personas migrantes y solicitantes de asilo (Cruz Roja). Cáritas ofrece asesoría jurídica fuera de Eibar, por derivación.",
+"nota_eu": "Bizileku eta nazionalitateari buruzko orientazioa, hitzorduarekin (Immigrazioa); informazio orokorra erroldatzean (Harreragunea); migratzaileentzako eta asilo-eskatzaileentzako aholkularitza juridikoa (Gurutze Gorria). Caritasek aholkularitza juridikoa ematen du Eibartik kanpo, deribazio bidez."
+},
+{
+"id": "apoyosocial",
+"icon": "users",
+"fase": "apoyo",
+"es": "No estar solo/a",
+"eu": "Ez bakarrik egotea",
+"sub_es": "Redes de apoyo y acompañamiento",
+"sub_eu": "Laguntza-sareak eta akonpainamendua",
+"principal": [
+"gizartekintza",
+"caritas",
+"inmigracion"
+],
+"tambien": [
+"cruzroja",
+"armeria",
+"osakidetza"
+],
+"nota_es": "Acompañamiento, proyectos comunitarios, actividades interculturales y redes de apoyo.",
+"nota_eu": "Akonpainamendua, komunitate-proiektuak, kulturarteko jarduerak eta laguntza-sareak."
+},
+{
+"id": "cuidados",
+"icon": "family",
+"fase": "apoyo",
+"es": "Cuidados y conciliación",
+"eu": "Zaintza eta kontziliazioa",
+"sub_es": "Cuidar de mi familia y compaginarlo",
+"sub_eu": "Familia zaindu eta uztartu",
+"principal": [
+"gizartekintza"
+],
+"tambien": [
+"cruzroja"
+],
+"nota_es": "Ayuda a domicilio y educación familiar (Servicios Sociales). Apoyo escolar para menores de 6 a 16 años (Cruz Roja). La conciliación es otra de las necesidades peor cubiertas según las entidades.",
+"nota_eu": "Etxez etxeko laguntza eta familia-hezkuntza (Gizarte Zerbitzuak). 6 eta 16 urte bitarteko adingabeentzako eskola-laguntza (Gurutze Gorria). Erakundeen ustez, kontziliazioa ere gutxien betetako beharretako bat da."
+}
+],
+"fases": {
+"acogida": {
+"tipo": "tronco",
+"es": "Acogida · puerta de entrada",
+"eu": "Harrera · sarrerako atea",
+"agentes": [
+"gizartekintza",
+"harreragunea",
+"lanbide",
+"inmigracion",
+"cruzroja",
+"caritas"
+]
+},
+"diagnostico": {
+"tipo": "tronco",
+"es": "Diagnóstico y plan personal",
+"eu": "Diagnostikoa eta plan pertsonala",
+"agentes": [
+"lanbide",
+"gizartekintza",
+"daiteke",
+"zabaltzen",
+"armeria",
+"caritas"
+]
+},
+"formacion": {
+"tipo": "tronco",
+"es": "Formación",
+"eu": "Prestakuntza",
+"agentes": [
+"cepa",
+"imfpb",
+"armeria",
+"lanbide",
+"daiteke",
+"zabaltzen",
+"inmigracion"
+]
+},
+"orientlab": {
+"tipo": "tronco",
+"es": "Orientación para el empleo",
+"eu": "Enplegurako orientazioa",
+"agentes": [
+"lanbide",
+"daiteke",
+"zabaltzen",
+"armeria",
+"cruzroja"
+]
+},
+"empleo": {
+"tipo": "tronco",
+"es": "Empleo",
+"eu": "Enplegua",
+"agentes": [
+"lanbide",
+"armeria",
+"daiteke",
+"zabaltzen",
+"cruzroja",
+"empresas"
+]
+},
+"seguimiento": {
+"tipo": "tronco",
+"es": "Seguimiento",
+"eu": "Jarraipena",
+"agentes": [
+"gizartekintza",
+"caritas",
+"armeria"
+]
+},
+"emp_idea": {
+"tipo": "tronco",
+"es": "Idea y primera orientación",
+"eu": "Ideia eta lehen orientazioa",
+"agentes": [
+"debegesa",
+"lanbide"
+]
+},
+"emp_aseso": {
+"tipo": "tronco",
+"es": "Asesoramiento para montar tu negocio",
+"eu": "Negozioa sortzeko aholkularitza",
+"agentes": [
+"debegesa"
+]
+},
+"emp_marcha": {
+"tipo": "tronco",
+"es": "Puesta en marcha",
+"eu": "Martxan jartzea",
+"agentes": [
+"debegesa"
+]
+},
+"prestaciones": {
+"tipo": "soporte",
+"es": "Ingresos y ayudas",
+"eu": "Diru-sarrerak eta laguntzak",
+"agentes": [
+"lanbide",
+"gizartekintza",
+"cruzroja",
+"etxebizitza"
+]
+},
+"apoyo": {
+"tipo": "soporte",
+"es": "Apoyo social y trámites",
+"eu": "Gizarte-laguntza eta izapideak",
+"agentes": [
+"gizartekintza",
+"inmigracion",
+"harreragunea",
+"caritas",
+"cruzroja",
+"asocmigrantes"
+]
+},
+"salud": {
+"tipo": "soporte",
+"es": "Salud y bienestar",
+"eu": "Osasuna eta ongizatea",
+"agentes": [
+"osakidetza",
+"inmigracion",
+"gizartekintza",
+"armeria"
+]
+},
+"vivienda": {
+"tipo": "soporte",
+"es": "Vivienda",
+"eu": "Etxebizitza",
+"agentes": [
+"gizartekintza",
+"etxebizitza",
+"caritas"
+]
+}
+},
+"perfiles": [
+{
+"id": "general",
+"icon": "compass",
+"es": "Recorrido general",
+"eu": "Ibilbide orokorra",
+"desc_es": "El recorrido habitual, sin describir tu situación. Se resalta a partir de lo que has marcado que necesitas.",
+"desc_eu": "Ohiko ibilbidea, zure egoera deskribatu gabe. Markatu dituzun beharren arabera nabarmentzen da.",
+"tronco": [
+"acogida",
+"diagnostico",
+"formacion",
+"orientlab",
+"empleo",
+"seguimiento"
+],
+"soporte": [
+"prestaciones",
+"apoyo",
+"salud",
+"vivienda"
+],
+"notas": {
+"empleo": {
+"es": "¿Quieres montar tu propio negocio? Tiene su propio recorrido.",
+"eu": "Zure negozioa sortu nahi duzu? Bere ibilbidea du.",
+"enlace": "emprende"
+}
+}
+},
+{
+"id": "emprende",
+"icon": "rocket",
+"es": "Quiero montar mi negocio",
+"eu": "Nire negozioa sortu nahi dut",
+"desc_es": "Tienes una idea o quieres trabajar por tu cuenta. Te acompañan desde el principio.",
+"desc_eu": "Ideia bat duzu edo zure kontura lan egin nahi duzu. Hasieratik laguntzen dizute.",
+"tronco": [
+"emp_idea",
+"emp_aseso",
+"emp_marcha"
+],
+"soporte": [],
+"notas": {
+"emp_aseso": {
+"es": "Debegesa: «Te ayudamos a empezar y te guiamos en cada paso».",
+"eu": "Debegesa: «Hasten lagunduko dizugu eta urrats bakoitzean gidatuko zaitugu»."
+},
+"emp_idea": {
+"es": "Lanbide también asesora para el autoempleo.",
+"eu": "Lanbidek ere autoenplegurako aholkularitza ematen du."
+}
+}
+},
+{
+"id": "ldd",
+"icon": "clock",
+"es": "Llevo tiempo sin trabajo",
+"eu": "Denbora daramat lanik gabe",
+"desc_es": "Más de un año sin empleo, a menudo con más de 45 años. Reactivarse, recualificarse y tener acompañamiento.",
+"desc_eu": "Urtebete baino gehiago lanik gabe, askotan 45 urtetik gora. Berraktibatu, birkualifikatu eta laguntza izan.",
+"tronco": [
+"acogida",
+"diagnostico",
+"formacion",
+"orientlab",
+"empleo",
+"seguimiento"
+],
+"soporte": [
+"prestaciones",
+"apoyo",
+"salud"
+],
+"notas": {
+"diagnostico": {
+"es": "Lanbide orienta y puede derivar a Daiteke o a Zabaltzen Sartu. Armeria Eskola ofrece itinerarios de empleabilidad.",
+"eu": "Lanbidek orientatzen du eta Daitekera edo Zabaltzen Sartura bidera dezake. Armeria Eskolak enplegagarritasun-ibilbideak eskaintzen ditu."
+},
+"formacion": {
+"es": "Recualificación y formación para personas desempleadas.",
+"eu": "Birkualifikazioa eta langabeentzako prestakuntza."
+}
+}
+},
+{
+"id": "joven",
+"icon": "sprout",
+"es": "Soy joven y busco mi primera oportunidad",
+"eu": "Gaztea naiz eta lehen aukera bilatzen dut",
+"desc_es": "Sin terminar los estudios o sin experiencia. Una segunda oportunidad para formarse y trabajar.",
+"desc_eu": "Ikasketak amaitu gabe edo esperientziarik gabe. Prestatzeko eta lan egiteko bigarren aukera.",
+"tronco": [
+"acogida",
+"diagnostico",
+"formacion",
+"orientlab",
+"empleo",
+"seguimiento"
+],
+"soporte": [
+"apoyo",
+"salud"
+],
+"destacados": {
+"formacion": [
+"imfpb",
+"cepa",
+"armeria"
+],
+"acogida": [
+"imfpb",
+"armeria",
+"gizartekintza"
+]
+},
+"notas": {
+"formacion": {
+"es": "Orientación académica: PEC y FP Básica (IMFPB), ESO para personas adultas (CEPA).",
+"eu": "Orientazio akademikoa: EOP eta Oinarrizko LH (OLHUI), helduentzako DBH (HHI)."
+},
+"acogida": {
+"es": "Muchas veces llegan derivados desde los centros educativos.",
+"eu": "Askotan ikastetxeetatik bideratuta iristen dira."
+}
+}
+},
+{
+"id": "migrante",
+"icon": "globe",
+"es": "Acabo de llegar a Eibar",
+"eu": "Eibarrera iritsi berria naiz",
+"desc_es": "El idioma, el padrón y los papeles marcan el comienzo del recorrido.",
+"desc_eu": "Hizkuntza, errolda eta paperak dira ibilbidearen hasiera.",
+"tronco": [
+"acogida",
+"diagnostico",
+"formacion",
+"orientlab",
+"empleo",
+"seguimiento"
+],
+"soporte": [
+"apoyo",
+"prestaciones",
+"vivienda",
+"salud"
+],
+"destacados": {
+"acogida": [
+"harreragunea",
+"inmigracion",
+"gizartekintza",
+"cruzroja",
+"caritas",
+"asocmigrantes"
+],
+"formacion": [
+"cepa",
+"inmigracion",
+"gizartekintza"
+]
+},
+"notas": {
+"acogida": {
+"es": "Al empadronarte, Harreragunea (en el Ayuntamiento) te informa y te orienta. Inmigración organiza las sesiones de acogida «Eibarren Bizi» y orienta sobre residencia y nacionalidad. Servicios Sociales tramita el empadronamiento social.",
+"eu": "Erroldatzean, Harreragunean (Udaletxean) informazioa eta orientazioa ematen dizute. Immigrazioak «Eibarren Bizi» harrera-saioak antolatzen ditu eta bizileku eta nazionalitateari buruz orientatzen du. Gizarte Zerbitzuek gizarte-errolda izapidetzen dute."
+},
+"formacion": {
+"es": "Castellano y euskera (CEPA), cursos intensivos de castellano y Empalabramiento (Inmigración).",
+"eu": "Gaztelania eta euskara (HHI), gaztelaniazko ikastaro trinkoak eta Empalabramiento (Immigrazioa)."
+},
+"vivienda": {
+"es": "La vivienda es hoy el principal obstáculo del itinerario, según varias entidades.",
+"eu": "Etxebizitza da gaur egun ibilbidearen oztopo nagusia, hainbat erakunderen arabera."
+}
+}
+},
+{
+"id": "mujer",
+"icon": "venus",
+"es": "Mujer que quiere acceder a un empleo",
+"eu": "Enplegua lortu nahi duen emakumea",
+"desc_es": "A menudo con más de 45 años o con responsabilidades familiares. Empoderamiento y conciliación son clave.",
+"desc_eu": "Askotan 45 urtetik gora edo familia-erantzukizunekin. Ahalduntzea eta kontziliazioa dira gakoak.",
+"tronco": [
+"acogida",
+"diagnostico",
+"formacion",
+"orientlab",
+"empleo",
+"seguimiento"
+],
+"soporte": [
+"apoyo",
+"prestaciones",
+"salud"
+],
+"destacados": {
+"apoyo": [
+"zabaltzen",
+"gizartekintza",
+"caritas"
+]
+},
+"notas": {
+"apoyo": {
+"es": "Empoderamiento de mujeres (Zabaltzen Sartu) y Andretxea (Servicios Sociales). Cáritas ofrece el programa Miriam fuera de Eibar, por derivación.",
+"eu": "Emakumeen ahalduntzea (Zabaltzen Sartu) eta Andretxea (Gizarte Zerbitzuak). Caritasek Miriam programa eskaintzen du Eibartik kanpo, deribazio bidez."
+},
+"orientlab": {
+"es": "La conciliación condiciona la búsqueda y pide acompañamiento sostenido.",
+"eu": "Kontziliazioak bilaketa baldintzatzen du eta laguntza iraunkorra eskatzen du."
+}
+}
+},
+{
+"id": "discapacidad",
+"icon": "access",
+"es": "Tengo una discapacidad",
+"eu": "Desgaitasuna dut",
+"desc_es": "El itinerario combina apoyos, salud y empleo con apoyo.",
+"desc_eu": "Ibilbideak laguntzak, osasuna eta laguntzadun enplegua uztartzen ditu.",
+"tronco": [
+"acogida",
+"diagnostico",
+"formacion",
+"orientlab",
+"empleo",
+"seguimiento"
+],
+"soporte": [
+"prestaciones",
+"apoyo",
+"salud"
+],
+"notas": {
+"empleo": {
+"es": "Empleo con apoyo o centro especial de empleo: ninguna entidad del formulario lo ofrece en Eibar. Tramo por completar.",
+"eu": "Laguntzadun enplegua edo enplegu-zentro berezia: inkestako erakunde batek ere ez du Eibarren eskaintzen. Osatzeko dago."
+}
+}
+},
+{
+"id": "prestaciones",
+"icon": "coins",
+"es": "Cobro la RGI, el IMV o ayudas",
+"eu": "DSBE, BGD edo laguntzak jasotzen ditut",
+"desc_es": "La ayuda económica va unida a un plan de activación e inclusión.",
+"desc_eu": "Diru-laguntza aktibazio- eta inklusio-plan bati lotuta dago.",
+"tronco": [
+"acogida",
+"diagnostico",
+"orientlab",
+"formacion",
+"empleo",
+"seguimiento"
+],
+"soporte": [
+"prestaciones",
+"apoyo",
+"salud"
+],
+"destacados": {
+"diagnostico": [
+"lanbide",
+"gizartekintza",
+"zabaltzen",
+"daiteke"
+]
+},
+"notas": {
+"prestaciones": {
+"es": "RGI e IMV en Lanbide; AES en Servicios Sociales.",
+"eu": "DSBE eta BGD Lanbiden; GLL Gizarte Zerbitzuetan."
+}
+}
+},
+{
+"id": "varias",
+"icon": "lifebuoy",
+"es": "Tengo varias necesidades a la vez",
+"eu": "Hainbat behar ditut aldi berean",
+"desc_es": "Dinero, vivienda, salud, papeles… todo junto. Hace falta que los servicios se coordinen.",
+"desc_eu": "Dirua, etxebizitza, osasuna, paperak… dena batera. Zerbitzuek koordinatu behar dute.",
+"tronco": [
+"acogida",
+"diagnostico",
+"formacion",
+"orientlab",
+"empleo",
+"seguimiento"
+],
+"soporte": [
+"prestaciones",
+"apoyo",
+"salud",
+"vivienda"
+],
+"destacados": {
+"acogida": [
+"gizartekintza",
+"cruzroja",
+"caritas"
+],
+"seguimiento": [
+"gizartekintza",
+"caritas"
+]
+},
+"notas": {
+"acogida": {
+"es": "Servicios Sociales coordina con Lanbide, salud y las entidades; el recorrido rara vez es lineal.",
+"eu": "Gizarte Zerbitzuek Lanbiderekin, osasunarekin eta erakundeekin koordinatzen dute; ibilbidea gutxitan da lineala."
+},
+"empleo": {
+"es": "El empleo no siempre es lo primero: a veces toca antes la salud o la vivienda.",
+"eu": "Enplegua ez da beti lehena: batzuetan osasuna edo etxebizitza dira lehenik."
+}
+}
+},
+{
+"id": "sinhogar",
+"icon": "home",
+"es": "No tengo dónde vivir",
+"eu": "Ez dut non bizi",
+"desc_es": "Sin alojamiento estable. Lo primero son la vivienda y las necesidades básicas.",
+"desc_eu": "Bizileku egonkorrik gabe. Lehenik etxebizitza eta oinarrizko beharrak.",
+"tronco": [
+"acogida",
+"diagnostico",
+"orientlab",
+"empleo",
+"seguimiento"
+],
+"soporte": [
+"vivienda",
+"prestaciones",
+"apoyo",
+"salud"
+],
+"destacados": {
+"acogida": [
+"gizartekintza",
+"caritas",
+"cruzroja"
+],
+"vivienda": [
+"gizartekintza",
+"etxebizitza",
+"caritas"
+]
+},
+"notas": {
+"vivienda": {
+"es": "Viviendas de urgencia social y empadronamiento social (Servicios Sociales). Cáritas puede derivar a sus centros residenciales fuera de Eibar: Trintxer-Emeki (Pasaia) y Sorabilla (Andoain).",
+"eu": "Gizarte-larrialdiko etxebizitzak eta gizarte-errolda (Gizarte Zerbitzuak). Caritasek Eibartik kanpoko bere egoitza-zentroetara bidera dezake: Trintxer-Emeki (Pasaia) eta Sorabilla (Andoain)."
+}
+}
+}
 ]
 }
 </script>
@@ -492,61 +1500,76 @@ a{color:var(--blue-ink)}
 <script>
 const DATA = JSON.parse(document.getElementById('data').textContent);
 const E = DATA.entidades, NEEDS = DATA.necesidades, FASES = DATA.fases, PERF = DATA.perfiles;
+const OCULTAS = new Set(DATA.ocultas||[]);
 const NB = Object.fromEntries(NEEDS.map(n=>[n.id,n]));
 
 const UI = {
- es:{brand:'Ibilbideak · Itinerarios',brandsub:'Eibarko Udala · Mesa de Inclusión',tabNeeds:'Qué necesito',tabItin:'Itinerario',tabDir:'Entidades',
-  notice:'Versión de trabajo para la Mesa de Inclusión. Datos del formulario de las entidades; pueden cambiar.',
+ es:{title:'Itinerarios de inclusión · Eibar',brand:'Itinerarios · Eibar',brandsub:'Ayuntamiento de Eibar · Mesa de Inclusión',
+  navLabel:'Secciones',langLabel:'Idioma',close:'Cerrar',profSel:'Situación',
+  tabNeeds:'Qué necesito',tabItin:'Itinerario',tabDir:'Entidades',
+  notice:'Versión de trabajo para la Mesa de Inclusión. Datos facilitados por las entidades; pueden cambiar.',
   eyebrow:'Empleo, formación y apoyo en Eibar',needsQ:'¿Qué necesitas ahora?',
   needsLead:'Marca una o varias cosas y te diremos a dónde acudir en Eibar. No hace falta que expliques tu situación.',
   seeWhere:'Ver dónde acudir',preferSituation:'¿Prefieres describir tu situación? (también para profesionales)',
   startQ:'¿No sabes por dónde empezar?',
   startTxt:'Acude a Servicios Sociales ({g}) o a Lanbide ({l}). Te escucharán y te orientarán.',
-  resEyebrow:'Tu resultado',resTitle:'Dónde acudir',changeNeeds:'Cambiar lo que necesito',
+  resEyebrow:'Tu resultado',resTitle:'Dónde acudir en Eibar',changeNeeds:'Cambiar lo que necesito',
   also:'También te pueden ayudar:',more:'Más información',
-  twoT:'Dos tipos de orientación',acadT:'Para estudiar',acadP:'Orientación académica: sacar un título, seguir estudiando u homologar estudios.',
+  twoT:'Dos tipos de orientación',acadT:'Para estudiar',acadP:'Orientación académica: sacar un título o seguir estudiando.',
   empT:'Para trabajar',empP:'Orientación para el empleo: buscar trabajo, mejorar tu empleo, prácticas.',
   saberT:'Saber más',saberP:'Mira el itinerario completo: los pasos habituales, qué entidad acompaña en cada uno y los apoyos que se activan a la vez.',saberBtn:'Ver el itinerario completo',
   profEyebrow:'Opcional',profQ:'Describe tu situación',profLead:'Elige la que más se parezca. Verás el itinerario habitual para esa situación. Útil también para profesionales que derivan casos.',
   trunk:'Pasos del recorrido',supports:'Apoyos en paralelo',supportsDesc:'Ingresos, vivienda, salud y apoyo social no son un paso más: se activan cuando hacen falta, en cualquier momento.',
-  phase:'Paso',support:'Apoyo',here:'Empiezas aquí',active:'Lo necesitas',before:'Antes',
+  phase:'Paso',support:'Apoyo',here:'Empiezas aquí',active:'Lo necesitas',
   yourNeeds:'Lo que has marcado:',noNeeds:'Estás viendo el recorrido completo. Marca tus necesidades en «Qué necesito» para resaltar tu punto de partida.',
-  dirEyebrow:'Directorio',dirTitle:'Entidades de la red',dirSearch:'Buscar por nombre o servicio…',dirPending:'Citadas por otras entidades, sin ficha propia todavía',
+  dirEyebrow:'Directorio',dirTitle:'Entidades y servicios en Eibar',dirLead:'Cada ficha distingue lo que se ofrece en Eibar de lo que la entidad ofrece fuera de Eibar.',
+  dirSearch:'Buscar por nombre o servicio…',dirPending:'Citadas por otras entidades, sin ficha propia todavía',
   acad:'Orientación académica',emp:'Orientación para el empleo',door:'Puerta de entrada',orientTag:'Sin ficha',
-  lanGeneral:'Vinculada a Lanbide · para toda la población',lanCercano:'Vinculada a Lanbide · acompañamiento más cercano',
-  fQue:'Qué hace',fAcc:'Cómo se accede',fCont:'Contacto',fNeeds:'Te puede ayudar con',
+  lanGeneral:'Con Lanbide · para toda la población',lanCercano:'Con Lanbide · acompañamiento más cercano',
+  fEibar:'En Eibar',fFuera:'Fuera de Eibar',fNeeds:'Te puede ayudar con',fAcc:'Cómo se accede',fCont:'Contacto',fHor:'Horario',
   acc:{libre:'Sin cita',cita:'Con cita previa',deriv:'Derivación de otra entidad'},
-  orientNote:'Otras entidades la citan en el formulario, pero todavía no ha rellenado su ficha. Se completará en la próxima ronda.',
-  formDesc:'Lo que cuenta la entidad en el formulario',newEnt:'Nueva en el Excel',
-  liveLoading:'· Cargando datos del Excel…',liveOk:(n,h)=>`· Datos en directo del Excel: ${n} entidades (cargados a las ${h}).`,
-  liveFail:(d)=>`· No se ha podido leer el Excel: se muestran los datos guardados el ${d}. Comprueba que tienes internet, que abres el archivo descargado en Chrome, Edge o Firefox (no en una vista previa) y que la hoja está compartida como «Cualquier persona con el enlace · Lector».`,
-  foot:(m)=>`Datos: formulario «Mapa de recursos e itinerarios de inclusión sociolaboral de Eibar», ${m.respuestas} entidades (${m.periodo_es}). Actualizado el ${m.actualizado}. Modelo orientativo · versión de trabajo.`},
- eu:{brand:'Ibilbideak · Itinerarios',brandsub:'Eibarko Udala · Inklusio Mahaia',tabNeeds:'Zer behar dut',tabItin:'Ibilbidea',tabDir:'Erakundeak',
-  notice:'Inklusio Mahairako lan-bertsioa. Erakundeen inkestako datuak; alda daitezke.',
+  orientNote:'Otras entidades la citan en el formulario, pero todavía no tiene ficha. Se completará en la próxima ronda.',
+  validar:'Lanbide está revisando cómo se describen sus servicios. Este contenido puede cambiar.',
+  newEnt:'Nueva · por revisar',newNoText:'',
+  euPend:'',
+  liveLoading:'· Cargando datos del Excel…',
+  liveOk:(n,c,h)=>`· Datos en directo del Excel: ${n} respuestas${c!=null?` y ${c} correcciones`:''} (cargados a las ${h}).`,
+  corrMsg:(e,av)=>e==='una-columna'?' La pestaña de correcciones está en una sola columna y no se ha aplicado: vuelve a importarla desde CORRECCIONES.xlsx.':e==='no'?' No se ha encontrado la pestaña CORRECCIONES: se usan las correcciones guardadas en esta versión.':(av?` ${av} filas de correcciones no se han podido aplicar (revisa la consola).`:''),
+  liveFail:(d)=>`· No se ha podido leer el Excel: se muestran los datos guardados el ${d}. Comprueba que tienes internet, que abres el archivo en Chrome, Edge o Firefox (no en una vista previa) y que la hoja está compartida como «Cualquier persona con el enlace · Lector».`,
+  foot:(m)=>`Datos: formulario «Mapa de recursos e itinerarios de inclusión sociolaboral de Eibar», ${m.respuestas} respuestas (${m.periodo_es}), revisadas con las propias entidades. Actualizado el ${m.actualizado}. Solo se publican teléfonos y correos corporativos. Modelo orientativo · versión de trabajo.`},
+ eu:{title:'Gizarteratze-ibilbideak · Eibar',brand:'Ibilbideak · Eibar',brandsub:'Eibarko Udala · Inklusio Mahaia',
+  navLabel:'Atalak',langLabel:'Hizkuntza',close:'Itxi',profSel:'Egoera',
+  tabNeeds:'Zer behar dut',tabItin:'Ibilbidea',tabDir:'Erakundeak',
+  notice:'Inklusio Mahairako lan-bertsioa. Erakundeek emandako datuak; alda daitezke.',
   eyebrow:'Enplegua, prestakuntza eta laguntza Eibarren',needsQ:'Zer behar duzu orain?',
   needsLead:'Markatu gauza bat edo gehiago eta Eibarren nora jo esango dizugu. Ez duzu zure egoera azaldu behar.',
   seeWhere:'Ikusi nora jo',preferSituation:'Zure egoera deskribatu nahi duzu? (profesionalentzat ere bai)',
   startQ:'Ez dakizu nondik hasi?',
   startTxt:'Jo Gizarte Zerbitzuetara ({g}) edo Lanbidera ({l}). Entzun eta bideratuko zaituzte.',
-  resEyebrow:'Zure emaitza',resTitle:'Nora jo',changeNeeds:'Aldatu behar dudana',
+  resEyebrow:'Zure emaitza',resTitle:'Eibarren nora jo',changeNeeds:'Aldatu behar dudana',
   also:'Hauek ere lagun zaitzakete:',more:'Informazio gehiago',
-  twoT:'Bi orientazio mota',acadT:'Ikasteko',acadP:'Orientazio akademikoa: titulu bat ateratzea, ikasten jarraitzea edo ikasketak homologatzea.',
+  twoT:'Bi orientazio mota',acadT:'Ikasteko',acadP:'Orientazio akademikoa: titulu bat ateratzea edo ikasten jarraitzea.',
   empT:'Lan egiteko',empP:'Enplegurako orientazioa: lana bilatzea, lana hobetzea, praktikak.',
   saberT:'Gehiago jakin',saberP:'Ikusi ibilbide osoa: ohiko urratsak, urrats bakoitzean zein erakundek laguntzen duen eta aldi berean aktibatzen diren laguntzak.',saberBtn:'Ikusi ibilbide osoa',
   profEyebrow:'Aukerakoa',profQ:'Deskribatu zure egoera',profLead:'Aukeratu antzekoena. Egoera horretarako ohiko ibilbidea ikusiko duzu. Kasuak bideratzen dituzten profesionalentzat ere baliagarria.',
   trunk:'Ibilbidearen urratsak',supports:'Laguntzak paraleloan',supportsDesc:'Diru-sarrerak, etxebizitza, osasuna eta gizarte-laguntza ez dira beste urrats bat: behar direnean aktibatzen dira, edozein unetan.',
-  phase:'Urratsa',support:'Laguntza',here:'Hemen hasten zara',active:'Behar duzu',before:'Lehenago',
+  phase:'Urratsa',support:'Laguntza',here:'Hemen hasten zara',active:'Behar duzu',
   yourNeeds:'Markatu duzuna:',noNeeds:'Ibilbide osoa ikusten ari zara. Markatu zure beharrak «Zer behar dut» atalean abiapuntua nabarmentzeko.',
-  dirEyebrow:'Direktorioa',dirTitle:'Sareko erakundeak',dirSearch:'Bilatu izenaren edo zerbitzuaren arabera…',dirPending:'Beste erakunde batzuek aipatuak, oraindik fitxarik gabe',
+  dirEyebrow:'Direktorioa',dirTitle:'Erakundeak eta zerbitzuak Eibarren',dirLead:'Fitxa bakoitzak bereizten du Eibarren zer eskaintzen den eta erakundeak Eibartik kanpo zer eskaintzen duen.',
+  dirSearch:'Bilatu izenaren edo zerbitzuaren arabera…',dirPending:'Beste erakunde batzuek aipatuak, oraindik fitxarik gabe',
   acad:'Orientazio akademikoa',emp:'Enplegurako orientazioa',door:'Sarrerako atea',orientTag:'Fitxarik gabe',
-  lanGeneral:'Lanbiderekin lotua · herritar guztientzat',lanCercano:'Lanbiderekin lotua · laguntza hurbilagoa',
-  fQue:'Zer egiten du',fAcc:'Nola sartu',fCont:'Harremana',fNeeds:'Honetan lagun zaitzake',
+  lanGeneral:'Lanbiderekin · herritar guztientzat',lanCercano:'Lanbiderekin · laguntza hurbilagoa',
+  fEibar:'Eibarren',fFuera:'Eibartik kanpo',fNeeds:'Honetan lagun zaitzake',fAcc:'Nola sartu',fCont:'Harremana',fHor:'Ordutegia',
   acc:{libre:'Hitzordurik gabe',cita:'Aurretiko hitzordua',deriv:'Beste erakunde baten deribazioa'},
-  orientNote:'Beste erakunde batzuek inkestan aipatzen dute, baina oraindik ez du bere fitxa bete. Hurrengo txandan osatuko da.',
-  formDesc:'Erakundeak inkestan kontatzen duena',newEnt:'Berria Excelean',
-  liveLoading:'· Exceleko datuak kargatzen…',liveOk:(n,h)=>`· Exceleko datuak zuzenean: ${n} erakunde (${h}etan kargatuak).`,
-  liveFail:(d)=>`· Ezin izan da Excela irakurri: ${d}an gordetako datuak erakusten dira. Egiaztatu internet duzula, deskargatutako fitxategia Chrome, Edge edo Firefoxen irekitzen duzula (ez aurrebista batean) eta orria «Esteka duen edonork · Irakurlea» moduan partekatuta dagoela.`,
-  foot:(m)=>`Datuak: «Eibarko gizarteratze eta laneratze baliabide eta ibilbideen mapa» inkesta, ${m.respuestas} erakunde (${m.periodo_eu}). Eguneratua: ${m.actualizado}. Eredu orientagarria · lan-bertsioa.`}
+  orientNote:'Beste erakunde batzuek inkestan aipatzen dute, baina oraindik ez du fitxarik. Hurrengo txandan osatuko da.',
+  validar:'Lanbide bere zerbitzuen deskribapena berrikusten ari da. Eduki hau alda daiteke.',
+  newEnt:'Berria · berrikusteko',newNoText:'Erakunde honen informazioa gaztelaniaz baino ez dago oraindik.',
+  euPend:'Gaztelaniazko testua eguneratu da; euskarazko bertsioa berrikusteke dago.',
+  liveLoading:'· Exceleko datuak kargatzen…',
+  liveOk:(n,c,h)=>`· Exceleko datuak zuzenean: ${n} erantzun${c!=null?` eta ${c} zuzenketa`:''} (${h}etan kargatuak).`,
+  corrMsg:(e,av)=>e==='una-columna'?' Zuzenketen fitxa zutabe bakarrean dago eta ez da aplikatu: inportatu berriro CORRECCIONES.xlsx fitxategitik.':e==='no'?' Ez da CORRECCIONES fitxa aurkitu: bertsio honetan gordetako zuzenketak erabiltzen dira.':(av?` Zuzenketen ${av} errenkada ezin izan dira aplikatu (begiratu kontsola).`:''),
+  liveFail:(d)=>`· Ezin izan da Excela irakurri: ${d}(e)an gordetako datuak erakusten dira. Egiaztatu internet duzula, fitxategia Chrome, Edge edo Firefoxen irekitzen duzula (ez aurrebista batean) eta orria «Esteka duen edonork · Irakurlea» moduan partekatuta dagoela.`,
+  foot:(m)=>`Datuak: «Eibarko gizarteratze eta laneratze baliabide eta ibilbideen mapa» inkesta, ${m.respuestas} erantzun (${m.periodo_eu}), erakundeekin berrikusiak. Eguneratua: ${m.actualizado}. Telefono eta helbide elektroniko korporatiboak baino ez dira argitaratzen. Eredu orientagarria · lan-bertsioa.`}
 };
 
 const AMB_COLOR = k=>`var(--am-${k})`;
@@ -580,35 +1603,45 @@ const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
 
 let LANG='es', VIEW='needs', SEL=[], PROFILE='general';
 const t=k=>UI[LANG][k];
-const L=(o,k)=>o[k+'_'+LANG]??o[LANG]??'';
+const L=(o,k)=>(o&&(o[k+'_'+LANG]??o[LANG]))||'';
+const nombre=id=>E[id]?L(E[id],'nombre'):'';
+/* Texto «En Eibar»: si el Excel (columna «En Eibar») ha cambiado desde la revisión, en castellano se muestra lo nuevo. */
+function eibarText(a){
+  if(a.eibar_live){ return LANG==='es'?a.eibar_live:(a.eibar_eu||''); }
+  return L(a,'eibar');
+}
+function fueraText(a){
+  if(a.fuera_live){ return LANG==='es'?a.fuera_live:(a.fuera_eu||''); }
+  return L(a,'fuera');
+}
+function resumen(a){ return L(a,'resumen') || (LANG==='es'?(a.eibar_live||''):''); }
 
 function tagsHTML(a){
   if(!a.real) return `<span class="tag t-orient">${t('orientTag')}</span>`;
-  let h=a.nuevo?`<span class="tag t-door">${t('newEnt')}</span>`:'';
+  let h=a.nuevo?`<span class="tag t-orient">${t('newEnt')}</span>`:'';
   if((a.orient||[]).includes('academica')) h+=`<span class="tag t-acad">${t('acad')}</span>`;
   if((a.orient||[]).includes('empleo')) h+=`<span class="tag t-emp">${t('emp')}</span>`;
   if(a.lanbide==='general') h+=`<span class="tag t-lan">${t('lanGeneral')}</span>`;
   if(a.lanbide==='cercano') h+=`<span class="tag t-lan">${t('lanCercano')}</span>`;
   return h;
 }
-const firstSentence=s=>{const m=String(s).match(/^.*?[.:](\s|$)/);return m?m[0].trim().replace(/:$/,'.'):s};
 
-function ecard(id,full){
+function ecard(id,needId){
   const a=E[id]; if(!a) return '';
-  const que = L(a,'que');
+  const tj=needId&&NB[needId]&&NB[needId].tarjetas&&NB[needId].tarjetas[id];
+  const txt=tj?(tj[LANG]||''):resumen(a);
   return `<article class="ecard">
-    <h3>${esc(a.nombre)}</h3>
+    <h3>${esc(nombre(id))}</h3>
     <div class="tags">${tagsHTML(a)}</div>
-    <p>${esc(full?que:firstSentence(que))}</p>
+    ${txt?`<p>${esc(txt)}</p>`:''}
     ${a.real?`<div class="meta">
-      ${a.dir?`<span>${svg('pin')}${esc(a.dir)}</span>`:''}
+      ${L(a,'dir')?`<span>${svg('pin')}${esc(L(a,'dir'))}</span>`:''}
       ${a.tel?`<span>${svg('phone')}${esc(a.tel)}</span>`:''}
     </div>`:''}
     <button class="more" data-ficha="${id}">${t('more')}</button>
   </article>`;
 }
 
-/* ---------- views ---------- */
 function setView(v){
   VIEW=v;
   document.querySelectorAll('.view').forEach(s=>s.classList.toggle('on',s.id==='v-'+v));
@@ -617,7 +1650,7 @@ function setView(v){
   render(); window.scrollTo({top:0});
 }
 
-function startText(){const c=id=>E[id]?[E[id].dir,E[id].tel].filter(Boolean).join(', '):'';
+function startText(){const c=id=>E[id]?[L(E[id],'dir'),E[id].tel].filter(Boolean).join(', '):'';
   return t('startTxt').replace('{g}',c('gizartekintza')).replace('{l}',c('lanbide')).replace(' ()','');}
 function renderNeeds(){
   document.getElementById('needs-grid').innerHTML=NEEDS.map(n=>`
@@ -635,8 +1668,8 @@ function renderResult(){
   const ordered=NEEDS.filter(n=>SEL.includes(n.id));
   let h='';
   if(SEL.includes('trabajo')||SEL.includes('estudiar')||SEL.includes('curso')){
-    const ac=['cepa','imfpb','armeria'].filter(id=>E[id]), em=['lanbide','daiteke','zabaltzen','armeria','debegesa','ftsi'].filter(id=>E[id]);
-    const li=ids=>ids.map(id=>{const a=E[id];let x=`<li><button class="linkish" data-ficha="${id}" style="padding:0;font-size:13px">${esc(a.nombre)}</button>`;
+    const ac=['cepa','imfpb','armeria'].filter(id=>E[id]), em=['lanbide','daiteke','zabaltzen','armeria'].filter(id=>E[id]);
+    const li=ids=>ids.map(id=>{const a=E[id];let x=`<li><button class="linkish" data-ficha="${id}" style="padding:0;font-size:13px">${esc(nombre(id))}</button>`;
       if(a.lanbide) x+=` <span class="tag t-lan">${a.lanbide==='general'?t('lanGeneral'):t('lanCercano')}</span>`;return x+'</li>'}).join('');
     h+=`<section class="res-sec"><h2>${esc(t('twoT'))}</h2>
       <div class="twotypes">
@@ -645,11 +1678,12 @@ function renderResult(){
       </div></section>`;
   }
   ordered.forEach(n=>{
+    const pr=n.principal.filter(id=>E[id]), tb=n.tambien.filter(id=>E[id]);
     h+=`<section class="res-sec">
       <h2><span class="ni">${svg(n.icon)}</span>${esc(n[LANG])}</h2>
       <p class="note">${esc(L(n,'nota'))}</p>
-      <div class="cards">${n.principal.map(id=>ecard(id)).join('')}</div>
-      ${n.tambien.length?`<div class="also"><span class="lbl">${t('also')}</span>${n.tambien.map(id=>`<button class="chipbtn" data-ficha="${id}">${esc(E[id].nombre)}</button>`).join('')}</div>`:''}
+      <div class="cards">${pr.map(id=>ecard(id,n.id)).join('')}</div>
+      ${tb.length?`<div class="also"><span class="lbl">${t('also')}</span>${tb.map(id=>`<button class="chipbtn" data-ficha="${id}">${esc(nombre(id))}</button>`).join('')}</div>`:''}
     </section>`;
   });
   h+=`<div class="start" style="margin-top:10px"><div><h3>${t('startQ')}</h3><p>${esc(startText())}</p></div></div>`;
@@ -664,32 +1698,35 @@ function renderProfiles(){
 function phaseHTML(fid,ids,label,note,state){
   const f=FASES[fid];
   const pill=state==='here'?`<span class="pill">${t('here')}</span>`:state==='active'?`<span class="pill">${t('active')}</span>`:'';
+  const nt=note?`<div class="pnote">${esc(note[LANG]||'')}${note.enlace?`<button class="linkish" data-profile="${note.enlace}">${esc((PERF.find(p=>p.id===note.enlace)||{})[LANG]||'')} →</button>`:''}</div>`:'';
   return `<div class="phase ${state||''}">
     ${pill}
     <div class="ph"><span class="num" style="background:${AMB_COLOR(fid)}">${label}</span>
       <span><span class="tt1">${esc(f[LANG])}</span><span class="kind">${f.tipo==='tronco'?t('phase'):t('support')}</span></span></div>
-    <div class="nodes">${ids.map(id=>{const a=E[id]; if(!a) return '';
+    <div class="nodes">${ids.filter(id=>E[id]).map(id=>{const a=E[id];
       const tg=(fid==='formacion'||fid==='orientlab')?tagsHTML(a):(a.real?'':`<span class="tag t-orient">${t('orientTag')}</span>`);
-      return `<button class="node" style="--am:${AMB_COLOR(fid)}" data-ficha="${id}"><span class="nm">${esc(a.nombre)}</span>${tg?`<span class="tags">${tg}</span>`:''}</button>`}).join('')}</div>
-    ${note?`<div class="pnote">${esc(note)}</div>`:''}
+      return `<button class="node" style="--am:${AMB_COLOR(fid)}" data-ficha="${id}"><span class="nm">${esc(nombre(id))}</span>${tg?`<span class="tags">${tg}</span>`:''}</button>`}).join('')}</div>
+    ${nt}
   </div>`;
 }
 
 function renderItin(){
   const p=PERF.find(x=>x.id===PROFILE)||PERF[0];
   const sel=document.getElementById('profile-sel');
+  sel.setAttribute('aria-label',t('profSel'));
   sel.innerHTML=PERF.map(x=>`<option value="${x.id}" ${x.id===p.id?'selected':''}>${esc(x[LANG])}</option>`).join('');
   document.getElementById('itin-title').textContent=p[LANG];
   document.getElementById('itin-desc').textContent=L(p,'desc');
   const needFases=SEL.map(id=>NB[id].fase);
   const troncoIdx=needFases.map(f=>p.tronco.indexOf(f)).filter(i=>i>=0);
   const start=troncoIdx.length?Math.min(...troncoIdx):-1;
-  const supSel=[...new Set(needFases.filter(f=>FASES[f].tipo==='soporte'))];
-  const note=(fid)=>p.notas&&p.notas[fid]?p.notas[fid][LANG]:'';
+  const supSel=p.soporte.length?[...new Set(needFases.filter(f=>FASES[f].tipo==='soporte'))]:[];
+  const note=(fid)=>p.notas&&p.notas[fid]?p.notas[fid]:null;
   const ids=(fid)=>(p.destacados&&p.destacados[fid])||FASES[fid].agentes;
   document.getElementById('track').innerHTML=p.tronco.map((fid,i)=>phaseHTML(fid,ids(fid),i+1,note(fid),
     start<0?'':(i<start?'before':i===start?'here':''))).join('');
   const sup=[...new Set([...p.soporte,...supSel])];
+  document.getElementById('sup-wrap').hidden=!sup.length;
   document.getElementById('track-s').innerHTML=sup.map(fid=>phaseHTML(fid,ids(fid),'·',note(fid),supSel.includes(fid)?'active':'')).join('');
   const nb=document.getElementById('needbar'); nb.hidden=false;
   nb.innerHTML=SEL.length?`<b>${t('yourNeeds')}</b>`+SEL.map(id=>`<span class="sc">${esc(NB[id][LANG])}</span>`).join('')
@@ -697,59 +1734,70 @@ function renderItin(){
 }
 
 function renderDir(){
-  const q=(document.getElementById('dir-q').value||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
-  document.getElementById('dir-q').placeholder=t('dirSearch');
   const norm=s=>String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
-  const real=Object.keys(E).filter(id=>E[id].real&&(!q||norm(E[id].nombre+' '+L(E[id],'que')).includes(q)));
-  document.getElementById('dir-cards').innerHTML=real.map(id=>ecard(id,true)).join('');
-  document.getElementById('dir-pending').innerHTML=Object.keys(E).filter(id=>!E[id].real).map(id=>`<button class="chipbtn" data-ficha="${id}">${esc(E[id].nombre)}</button>`).join('');
+  const q=norm(document.getElementById('dir-q').value||'');
+  document.getElementById('dir-q').placeholder=t('dirSearch');
+  const real=Object.keys(E).filter(id=>E[id].real&&(!q||norm(nombre(id)+' '+eibarText(E[id])+' '+resumen(E[id])).includes(q)));
+  document.getElementById('dir-cards').innerHTML=real.map(id=>ecard(id)).join('');
+  document.getElementById('dir-pending').innerHTML=Object.keys(E).filter(id=>!E[id].real).map(id=>`<button class="chipbtn" data-ficha="${id}">${esc(nombre(id))}</button>`).join('');
 }
 
 function render(){
   document.querySelectorAll('[data-t]').forEach(el=>{const v=UI[LANG][el.dataset.t]; if(typeof v==='string') el.textContent=v;});
+  document.title=t('title');
+  document.getElementById('tabs').setAttribute('aria-label',t('navLabel'));
+  document.getElementById('langgrp').setAttribute('aria-label',t('langLabel'));
+  document.getElementById('p-close').setAttribute('aria-label',t('close'));
   document.getElementById('foot').textContent=UI[LANG].foot(DATA.meta);
   const ls=document.getElementById('live-status');
-  ls.textContent = LIVE.state==='ok'?UI[LANG].liveOk(LIVE.n,LIVE.hora):LIVE.state==='fail'?UI[LANG].liveFail(DATA.meta.actualizado):UI[LANG].liveLoading;
+  ls.textContent = LIVE.state==='ok'?UI[LANG].liveOk(LIVE.n,LIVE.nc,LIVE.hora)+UI[LANG].corrMsg(LIVE.corr,LIVE.avisos.length):LIVE.state==='fail'?UI[LANG].liveFail(DATA.meta.actualizado):UI[LANG].liveLoading;
   document.documentElement.lang=LANG;
   if(VIEW==='needs') renderNeeds();
   if(VIEW==='result') renderResult();
   if(VIEW==='profiles') renderProfiles();
   if(VIEW==='itin') renderItin();
   if(VIEW==='dir') renderDir();
+  if(OPEN) openFicha(OPEN,true);
 }
 
-/* ---------- ficha ---------- */
-function openFicha(id){
-  const a=E[id]; if(!a) return;
+let OPEN=null;
+function openFicha(id,keepFocus){
+  const a=E[id]; if(!a) return; OPEN=id;
   document.getElementById('p-type').textContent=L(a,'tipo');
-  document.getElementById('p-name').textContent=a.nombre;
+  document.getElementById('p-name').textContent=nombre(id);
   let tg=tagsHTML(a); if(a.puerta) tg+=`<span class="tag t-door">${t('door')}</span>`;
   document.getElementById('p-tags').innerHTML=tg;
   let h='';
   if(!a.real) h+=`<div class="fs"><div class="obox">${t('orientNote')}</div></div>`;
+  if(a.validar) h+=`<div class="fs"><div class="obox">${t('validar')}</div></div>`;
   if(a.lanbide) h+=`<div class="fs"><div class="lbox">${a.lanbide==='general'?t('lanGeneral'):t('lanCercano')}</div></div>`;
-  h+=`<div class="fs"><h4>${t('fQue')}</h4><p>${esc(L(a,'que'))}</p></div>`;
+  const ei=eibarText(a);
+  if(a.real){
+    if(ei) h+=`<div class="fs eibox"><h4>${svg('pin')}${t('fEibar')}</h4><p>${esc(ei)}</p>${(LANG==='eu'&&a.eibar_live)?`<p class="cnote" style="margin-top:6px">${t('euPend')}</p>`:''}</div>`;
+    else if(LANG==='eu'&&a.nuevo) h+=`<div class="fs"><div class="obox">${t('newNoText')}</div></div>`;
+  } else if(ei) h+=`<div class="fs"><p>${esc(ei)}</p></div>`;
   const helps=NEEDS.filter(n=>n.principal.includes(id)||n.tambien.includes(id));
   if(helps.length) h+=`<div class="fs"><h4>${t('fNeeds')}</h4><div class="also" style="margin:0">${helps.map(n=>`<span class="chipbtn" style="cursor:default">${esc(n[LANG])}</span>`).join('')}</div></div>`;
-  if(a.acceso) h+=`<div class="fs"><h4>${t('fAcc')}</h4><p>${a.acceso.map(k=>t('acc')[k]).join(' · ')}</p></div>`;
-  if(a.form_desc && a.form_desc!==a.que_es) h+=`<details class="fs"><summary style="cursor:pointer;font-size:12.5px;font-weight:600;color:var(--blue-ink)">${t('formDesc')}</summary><p style="margin-top:8px">${esc(a.form_desc)}</p></details>`;
+  if(a.acceso&&a.acceso.length) h+=`<div class="fs"><h4>${t('fAcc')}</h4><p>${a.acceso.map(k=>t('acc')[k]).join(' · ')}</p></div>`;
+  const fu=fueraText(a);
+  if(fu) h+=`<details class="fs fuera"><summary>${t('fFuera')}</summary><p>${esc(fu)}</p></details>`;
   if(a.real){
     let c='';
-    if(a.persona) c+=`<div class="crow">${svg('users')}<span>${esc(a.persona)}${a.cargo?' · '+esc(a.cargo):''}</span></div>`;
-    if(a.dir) c+=`<div class="crow">${svg('pin')}<span>${esc(a.dir)}${/eibar/i.test(a.dir)?'':', Eibar'}</span></div>`;
+    if(L(a,'contacto')) c+=`<p class="cnote">${esc(L(a,'contacto'))}</p>`;
+    if(L(a,'dir')) c+=`<div class="crow">${svg('pin')}<span>${esc(L(a,'dir'))}, Eibar</span></div>`;
+    if(L(a,'horario')) c+=`<div class="crow">${svg('clock')}<span>${esc(L(a,'horario'))}</span></div>`;
     if(a.tel) c+=`<div class="crow">${svg('phone')}<span>${esc(a.tel)}</span></div>`;
-    if(a.email) c+=`<div class="crow">${svg('mail')}<span>${esc(a.email)}</span></div>`;
+    if(a.email) c+=`<div class="crow">${svg('mail')}<a href="mailto:${esc(a.email)}">${esc(a.email)}</a></div>`;
     if(a.web) c+=`<div class="crow">${svg('link')}<a href="https://${esc(a.web.replace(/^https?:\/\//,''))}" target="_blank" rel="noopener">${esc(a.web)}</a></div>`;
-    h+=`<div class="fs"><h4>${t('fCont')}</h4>${c}</div>`;
+    if(c) h+=`<div class="fs"><h4>${t('fCont')}</h4>${c}</div>`;
   }
   document.getElementById('p-body').innerHTML=h;
   document.getElementById('panel').classList.add('show');
   document.getElementById('scrim').classList.add('show');
-  document.getElementById('p-close').focus();
+  if(!keepFocus) document.getElementById('p-close').focus();
 }
-function closeFicha(){document.getElementById('panel').classList.remove('show');document.getElementById('scrim').classList.remove('show')}
+function closeFicha(){OPEN=null;document.getElementById('panel').classList.remove('show');document.getElementById('scrim').classList.remove('show')}
 
-/* ---------- events ---------- */
 document.addEventListener('click',e=>{
   const f=e.target.closest('[data-ficha]'); if(f){openFicha(f.dataset.ficha);return;}
   const n=e.target.closest('[data-need]'); if(n){const id=n.dataset.need;const i=SEL.indexOf(id);i>=0?SEL.splice(i,1):SEL.push(id);
@@ -771,20 +1819,25 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape')closeFicha()});
 
 
 /* =====================================================================
-   DATOS EN DIRECTO · al abrir la página se lee el Excel publicado.
-   - Contacto, dirección, forma de acceso y presencia de cada entidad: SIEMPRE del Excel.
-   - Filas nuevas del Excel: aparecen como entidades nuevas, colocadas según lo que marcan.
-   - Filas borradas: la entidad desaparece del mapa.
-   - Textos redactados (descripción, euskera, reparto principal/también): se mantienen.
-   Si no hay conexión, se usan los datos guardados en el bloque de arriba.
+   DATOS EN DIRECTO
+   1) Hoja de respuestas del formulario (no se modifica nunca):
+      - qué entidades existen (una fila nueva = entidad nueva; una fila borrada = desaparece),
+      - forma de acceso,
+      - columna «En Eibar» / «Fuera de Eibar»: si cambian, en castellano se muestra el texto nuevo.
+      - Teléfonos, correos y personas NO se toman de aquí: solo se publican contactos corporativos.
+   2) Pestaña CORRECCIONES: cambios acordados con las entidades, que se aplican encima.
+   Si no hay conexión, se usan los datos base de arriba.
    ===================================================================== */
+const SHEET_ID='1XjReWjJ_s9BR2Jr0zCGjiuQikgMEu1Nt3I2Gg5xk1yE';
 const SHEET_CSV='https://docs.google.com/spreadsheets/d/e/2PACX-1vSXu0l9PlC-QJxr42FhHxb4e9L_m5PFRfysdvzWklhybqWcpo6qD3-hJZx3w4x-mH2goig8w-wPJa7U/pub?output=csv';
-const LIVE={state:'loading',n:0,hora:''};
-const MATCH={gizartekintza:/gizartekintza|servicios sociales|gizarte zerbitzu/,inmigracion:/immigrazio|inmigraci|harreragune|kultura aniztasun/,
- lanbide:/^lanbide/,daiteke:/daiteke/,zabaltzen:/zabaltzen/,debegesa:/debegesa/,armeria:/armeria/,imfpb:/imfpb|olhui|edukeibar/,
- cepa:/\bcepa\b|\bepa\b|helduen/,ftsi:/ftsi|siderurgia/,cruzroja:/cruz roja|gurutze gorri/,caritas:/caritas/,osakidetza:/osakidetza/};
-const FIJOS={daiteke:['dir']}; /* decisiones tomadas con Goretti que no se sobrescriben */
-const nrm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').trim();
+const GVIZ='https://docs.google.com/spreadsheets/d/'+SHEET_ID+'/gviz/tq';
+const HOJA_CORR='CORRECCIONES';
+const LIVE={state:'loading',n:0,nc:null,hora:'',avisos:[]};
+/* Orden importante: Harreragunea antes que Inmigración. */
+const MATCH=[['harreragunea',/harreragune/],['inmigracion',/immigrazio|inmigraci|kultura aniztasun/],['gizartekintza',/gizartekintza|servicios sociales|gizarte zerbitzu/],
+ ['lanbide',/^lanbide/],['daiteke',/daiteke/],['zabaltzen',/zabaltzen/],['etxebizitza',/etxebizitza bulego|oficina de vivienda/],['debegesa',/debegesa/],['armeria',/armeria/],['imfpb',/imfpb|olhui|edukeibar|azitain/],
+ ['cepa',/\bcepa\b|\bepa\b|\bhhi\b|helduen/],['ftsi',/ftsi|siderurgia/],['cruzroja',/cruz roja|gurutze gorri/],['caritas',/caritas/],['osakidetza',/osakidetza/]];
+const nrm=s=>String(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/\s+/g,' ').trim();
 
 function parseCSV(txt){
   const rows=[];let row=[],f='',q=false;
@@ -796,13 +1849,19 @@ function parseCSV(txt){
   row.push(f); if(row.some(x=>x.trim()))rows.push(row); return rows;
 }
 const titleIfCaps=s=>(s&&s===s.toUpperCase()&&/[A-ZÑ]{4}/.test(s))?s.toLowerCase().replace(/(^|[\s,(/-])(\p{L})/gu,(m,a,b)=>a+b.toUpperCase()):s;
-const cTel=s=>String(s).replace(/\b(\d{3})\s?(\d{3})\s?(\d{3})\b/g,'$1 $2 $3').replace(/\s+\)/g,')').replace(/\s*\/\s*/g,' · ').trim();
-const cMail=s=>{const m=String(s).match(/[\w.+-]+@[\w-]+(\.[\w-]+)+/g);return m?m.map(x=>x.toLowerCase()).join(' · '):''};
 const cWeb=s=>{const m=String(s).match(/(https?:\/\/)?[\w-]+(\.[\w-]+)+(\/[^\s)]*)?/i);return m?m[0].replace(/^https?:\/\//i,'').replace(/\/$/,''):''};
-const cDir=s=>titleIfCaps(String(s).trim()).replace(/\s*\(?gipuzkoa\)?/ig,'').replace(/\b20600\b/g,'').replace(/[\s,.-]+$/,'').replace(/\s{2,}/g,' ').trim();
+const cDir=s=>titleIfCaps(String(s).trim()).replace(/\s*\(?gipuzkoa\)?/ig,'').replace(/\b20600\b/g,'').replace(/[\s,.-]*eibar$/i,'').replace(/[\s,.-]+$/,'').replace(/\s{2,}/g,' ').trim();
 function cAcc(s){const n=nrm(s),a=[]; if(/libre/.test(n))a.push('libre'); if(/cita/.test(n))a.push('cita'); if(/deriv/.test(n))a.push('deriv'); return a;}
+const bilingue=(s,lang)=>{const p=String(s||'').split('//').map(x=>x.trim()); return p.length>1?(lang==='eu'?p[0]:p[1]):p[0];};
 
-function needsFrom(c){ /* c: textos de las columnas de servicios */
+function quitarEntidad(k){
+  delete E[k];
+  NEEDS.forEach(n=>{n.principal=n.principal.filter(x=>x!==k); n.tambien=n.tambien.filter(x=>x!==k);});
+  Object.values(FASES).forEach(f=>f.agentes=f.agentes.filter(x=>x!==k));
+  PERF.forEach(p=>p.destacados&&Object.keys(p.destacados).forEach(f=>p.destacados[f]=p.destacados[f].filter(x=>x!==k)));
+}
+
+function needsFrom(c){
   const n=k=>nrm(c[k]),out=new Set();
   if(/buscar|mejorar|orientacion laboral|intermedia/.test(n('emp'))) out.add('trabajo');
   if(/emprend/.test(n('emp'))) out.add('emprender');
@@ -818,60 +1877,123 @@ function needsFrom(c){ /* c: textos de las columnas de servicios */
 }
 
 function applyLive(rows){
-  const H=rows[0].map(h=>h.replace(/\s+/g,' ').trim());
+  const H=rows[0].map(h=>String(h).replace(/\s+/g,' ').trim());
   const col=(test)=>H.findIndex(test);
-  const C={ts:0,nom:1,per:col(h=>/persona de contacto/i.test(h)),car:col(h=>/cargo/i.test(h)),mail:col(h=>/correo/i.test(h)),
-    tel:col(h=>/tel[eé]fono/i.test(h)),web:col(h=>/p[aá]gina web/i.test(h)),dir:col(h=>/direcci[oó]n completa/i.test(h)),
+  const C={nom:1,web:col(h=>/p[aá]gina web/i.test(h)),dir:col(h=>/direcci[oó]n completa/i.test(h)),
     tipo:col(h=>/describa vuestra organizaci|selecciona la opci/i.test(h)),desc:col(h=>/describa brevemente/i.test(h)),
     emp:col(h=>h==='ENPLEGUA // EMPLEO'),for:col(h=>h==='PRESTAKUNTZA // FORMACIÓN'),apo:col(h=>h==='GIZARTE-LAGUNTZA // APOYO SOCIAL'),
     ayu:col(h=>/^LAGUNTZA EKONOMIKOAK/.test(h)),viv:col(h=>h==='ETXEBIZITZA // VIVIENDA'),sal:col(h=>h==='OSASUNA // SALUD'),
-    cui:col(h=>/^ZAINTZA ETA KONTZILIAZIOA/.test(h)),acc:col(h=>/forma de acceso/i.test(h))};
-  const g=(r,k)=>C[k]>=0?String(r[C[k]]||'').trim():'';
-  const seen=new Set(); let nuevos=0;
-  rows.slice(1).forEach((r,i)=>{
-    const nombre=g(r,'nom'); if(!nombre) return;
-    const key=Object.keys(MATCH).find(k=>!seen.has(k)&&MATCH[k].test(nrm(nombre)));
-    let id=key, a;
-    if(key){ seen.add(key); a=E[key]; }
-    else { id='nueva'+(++nuevos); const tipo=g(r,'tipo'); const desc=g(r,'desc');
-      a=E[id]={real:true,nuevo:true,puerta:false,nombre:titleIfCaps(nombre),tipo_es:(tipo.split('//')[1]||tipo).trim(),tipo_eu:(tipo.split('//')[0]||tipo).trim(),
-        orient:g(r,'emp')?['empleo']:[],ambitos:[],que_es:desc,que_eu:desc,acceso:[]};
+    cui:col(h=>/^ZAINTZA ETA KONTZILIAZIOA/.test(h)),acc:col(h=>/forma de acceso/i.test(h)),
+    bj:col(h=>/EN EIBAR$/i.test(h)&&!/FUERA/i.test(h)),bk:col(h=>/FUERA DE EIBAR/i.test(h))};
+  const g=(r,k)=>C[k]>=0?String(r[C[k]]??'').trim():'';
+  const seen=new Set(); let nuevos=0, n=0;
+  rows.slice(1).forEach(r=>{
+    const nom=g(r,'nom'); if(!nom) return; n++;
+    const hit=MATCH.find(([k,re])=>!seen.has(k)&&re.test(nrm(nom)));
+    let id=hit&&hit[0], a;
+    if(id){ seen.add(id); if(OCULTAS.has(id)) return; a=E[id]; if(!a) return; }
+    else {
+      id='nueva'+(++nuevos); if(OCULTAS.has(id)) return;
+      const tipo=g(r,'tipo');
+      a=E[id]={real:true,excel:true,nuevo:true,puerta:false,nombre_es:titleIfCaps(nom),nombre_eu:titleIfCaps(nom),
+        tipo_es:bilingue(tipo,'es'),tipo_eu:bilingue(tipo,'eu'),orient:g(r,'emp')?['empleo']:[],acceso:[],
+        resumen_es:'',resumen_eu:'',eibar_live:g(r,'bj')||g(r,'desc'),web:cWeb(g(r,'web'))};
+      const d=cDir(g(r,'dir')); a.dir_es=d; a.dir_eu=d;
       const svc={emp:g(r,'emp'),for:g(r,'for'),apo:g(r,'apo'),ayu:g(r,'ayu'),viv:g(r,'viv'),sal:g(r,'sal'),cui:g(r,'cui')};
-      needsFrom(svc).forEach(nid=>{const n=NB[nid]; if(n&&!n.tambien.includes(id)) n.tambien.push(id);});
+      needsFrom(svc).forEach(nid=>{const ne=NB[nid]; if(ne&&!ne.tambien.includes(id)&&!ne.principal.includes(id)) ne.tambien.push(id);});
       const FA={emp:'orientlab',for:'formacion',apo:'apoyo',ayu:'prestaciones',viv:'vivienda',sal:'salud',cui:'apoyo'};
-      Object.keys(FA).forEach(k=>{ if(svc[k]){ const f=FA[k]; if(!a.ambitos.includes(f)) a.ambitos.push(f); if(!FASES[f].agentes.includes(id)) FASES[f].agentes.push(id);} });
+      Object.keys(FA).forEach(k=>{ if(svc[k]){ const f=FA[k]; if(!FASES[f].agentes.includes(id)) FASES[f].agentes.push(id);} });
     }
-    const fijo=FIJOS[id]||[];
-    const set=(field,val)=>{ if(val && !fijo.includes(field)) a[field]=val; };
-    set('persona',titleIfCaps(g(r,'per'))); set('cargo',titleIfCaps(g(r,'car')));
-    set('email',cMail(g(r,'mail'))); set('tel',cTel(g(r,'tel'))); set('web',cWeb(g(r,'web'))); set('dir',cDir(g(r,'dir')));
-    const acc=cAcc(g(r,'acc')); if(acc.length) a.acceso=acc;
-    a.form_desc=g(r,'desc');
+    const acc=cAcc(g(r,'acc')); if(acc.length && !a.acceso_fijo) a.acceso=acc;
+    const bj=g(r,'bj'), bk=g(r,'bk');
+    if(!a.nuevo){
+      if(bj && a.src_bj!=null && nrm(bj)!==nrm(a.src_bj)) a.eibar_live=bj;
+      if(bk && a.src_bk!=null && nrm(bk)!==nrm(a.src_bk)) a.fuera_live=bk;
+    }
   });
-  /* entidades con ficha que ya no están en el Excel: se retiran del mapa */
-  Object.keys(MATCH).forEach(k=>{ if(!seen.has(k) && E[k]){ delete E[k];
-    NEEDS.forEach(n=>{n.principal=n.principal.filter(x=>x!==k); n.tambien=n.tambien.filter(x=>x!==k);});
-    Object.values(FASES).forEach(f=>f.agentes=f.agentes.filter(x=>x!==k));
-    PERF.forEach(p=>p.destacados&&Object.keys(p.destacados).forEach(f=>p.destacados[f]=p.destacados[f].filter(x=>x!==k))); }});
-  const now=new Date(), pad=x=>String(x).padStart(2,'0');
-  DATA.meta.respuestas=rows.length-1;
-  DATA.meta.actualizado=`${pad(now.getDate())}/${pad(now.getMonth()+1)}/${now.getFullYear()}`;
-  LIVE.state='ok'; LIVE.n=rows.length-1; LIVE.hora=`${pad(now.getHours())}:${pad(now.getMinutes())}`;
+  /* Entidades que salían del Excel y ya no están: se retiran (las derivadas, como Harreragunea, se mantienen). */
+  Object.keys(E).forEach(k=>{ if(E[k].excel && !E[k].nuevo && !seen.has(k)) quitarEntidad(k); });
+  return n;
 }
 
-const SHEET_ID='1XjReWjJ_s9BR2Jr0zCGjiuQikgMEu1Nt3I2Gg5xk1yE';
-const GVIZ='https://docs.google.com/spreadsheets/d/'+SHEET_ID+'/gviz/tq';
+/* ---------- CORRECCIONES ----------
+   Columnas: ID | ENTIDAD | ACCIÓN | CAMPO | VALOR (castellano) | VALOR (euskera) | MOTIVO | QUIÉN LO PIDE | FECHA | ACTIVA
+   ACCIÓN: corregir · ocultar · desdoblar · añadir · quitar */
+const CAMPOS_TXT=['nombre','tipo','resumen','eibar','fuera','dir','horario','contacto'];
+const CAMPOS_ALIAS={'en eibar':'eibar','en_eibar':'eibar','eibarren':'eibar','fuera de eibar':'fuera','fuera':'fuera','direccion':'dir','dirección':'dir','descripcion':'resumen','descripción':'resumen','telefono':'tel','teléfono':'tel','correo':'email','e-mail':'email'};
+function applyCorrecciones(rows){
+  if(!rows||rows.length<2) return 0;
+  const H=rows[0].map(h=>nrm(h));
+  const ix=(re,def)=>{const i=H.findIndex(h=>re.test(h)); return i>=0?i:def;};
+  const I={ent:ix(/^entidad/,1),acc:ix(/^accion/,2),campo:ix(/^campo/,3),es:ix(/castellano|^valor$|valor es/,4),eu:ix(/euskera|valor eu/,5),act:ix(/^activa/,9)};
+  let n=0;
+  rows.slice(1).forEach((r,i)=>{
+    const v=k=>String(r[I[k]]??'').trim();
+    if(/^(no|ez|0|false)$/i.test(v('act'))) return;
+    const ent=nrm(v('ent')).replace(/\s+/g,''), acc=nrm(v('acc')), es=v('es'), eu=v('eu');
+    let campo=nrm(v('campo')); campo=CAMPOS_ALIAS[campo]||campo;
+    if(!ent||!acc) return;
+    const aviso=m=>LIVE.avisos.push(`Fila ${i+2}: ${m}`);
+    if(ent.startsWith('necesidad:')){
+      const ne=NB[ent.split(':')[1]]; if(!ne){aviso('necesidad desconocida');return;}
+      if(campo==='nota'){ if(es) ne.nota_es=es; if(eu) ne.nota_eu=eu; n++; }
+      else if(campo==='subtitulo'){ if(es) ne.sub_es=es; if(eu) ne.sub_eu=eu; n++; }
+      else aviso('campo de necesidad desconocido');
+      return;
+    }
+    if(acc==='ocultar'){
+      if(!campo){ OCULTAS.add(ent); if(E[ent]) quitarEntidad(ent); n++; }
+      else if(E[ent]){ if(CAMPOS_TXT.includes(campo)){E[ent][campo+'_es']='';E[ent][campo+'_eu']='';} else E[ent][campo]=''; n++; }
+      return;
+    }
+    if(acc==='desdoblar'){
+      const src=E[ent], nid=campo.replace(/\s+/g,'');
+      if(!src){aviso('entidad origen desconocida');return;}
+      if(!E[nid]) E[nid]={real:true,excel:false,puerta:false,derivado_de:ent,tipo_es:src.tipo_es,tipo_eu:src.tipo_eu,web:src.web,acceso:[...(src.acceso||[])],orient:[],
+        nombre_es:es||nid,nombre_eu:eu||es||nid,resumen_es:'',resumen_eu:'',eibar_es:'',eibar_eu:''};
+      n++; return;
+    }
+    if(acc==='anadir'||acc==='añadir'){
+      if(!E[ent]) E[ent]={real:true,excel:false,puerta:false,acceso:[],orient:[],nombre_es:ent,nombre_eu:ent,resumen_es:'',resumen_eu:'',eibar_es:'',eibar_eu:''};
+      const a=E[ent];
+      if(campo.startsWith('necesidad')){ const [nid,tipo]=es.split(':').map(x=>nrm(x)); const ne=NB[nid];
+        if(!ne){aviso('necesidad desconocida');return;}
+        const lst=tipo==='principal'?ne.principal:ne.tambien; if(!ne.principal.includes(ent)&&!ne.tambien.includes(ent)) lst.push(ent); n++; return; }
+      if(campo==='fase'){ const f=FASES[nrm(es)]; if(!f){aviso('fase desconocida');return;} if(!f.agentes.includes(ent)) f.agentes.push(ent); n++; return; }
+      if(!campo){ n++; return; }
+      /* sigue como «corregir» */
+    }
+    if(acc==='quitar'){
+      const [tipo,ref]=es.split(':').map(x=>nrm(x));
+      if(tipo==='necesidad'&&NB[ref]){ NB[ref].principal=NB[ref].principal.filter(x=>x!==ent); NB[ref].tambien=NB[ref].tambien.filter(x=>x!==ent); n++; }
+      else if(tipo==='fase'&&FASES[ref]){ FASES[ref].agentes=FASES[ref].agentes.filter(x=>x!==ent); n++; }
+      else aviso('«quitar» necesita «necesidad:id» o «fase:id» en el valor');
+      return;
+    }
+    const a=E[ent]; if(!a){aviso(`entidad «${ent}» desconocida`);return;}
+    if(CAMPOS_TXT.includes(campo)){
+      if(es) a[campo+'_es']=es; if(eu) a[campo+'_eu']=eu;
+      if(campo==='eibar'&&(es||eu)) delete a.eibar_live;
+      if(campo==='fuera'&&(es||eu)) delete a.fuera_live;
+      n++;
+    } else if(['tel','email','web'].includes(campo)){ a[campo]=es; n++; }
+    else if(campo==='acceso'){ a.acceso=cAcc(es); a.acceso_fijo=true; n++; }
+    else if(campo.startsWith('tarjeta:')){ const ne=NB[campo.split(':')[1]]; if(!ne){aviso('necesidad desconocida');return;}
+      ne.tarjetas=ne.tarjetas||{}; ne.tarjetas[ent]={es,eu:eu||''}; n++; }
+    else aviso(`campo «${campo}» desconocido`);
+  });
+  return n;
+}
 
-/* Vía 1 y 2: descargar CSV (publicado en la web / gviz). Necesitan que el navegador permita CORS. */
+/* ---------- lectura ---------- */
 async function viaFetch(url){
   const ctl=new AbortController(); const to=setTimeout(()=>ctl.abort(),10000);
   try{ const res=await fetch(url,{signal:ctl.signal}); if(!res.ok) throw new Error('HTTP '+res.status); return parseCSV(await res.text()); }
   finally{ clearTimeout(to); }
 }
-/* Vía 3: JSONP (etiqueta <script>). Funciona incluso abriendo el archivo desde el ordenador. */
-function viaJSONP(){
+function viaJSONP(extra){
   return new Promise((resolve,reject)=>{
-    const cb='__ibil'+Date.now(); const sc=document.createElement('script');
+    const cb='__ibil'+Date.now()+Math.floor(Math.random()*1e4); const sc=document.createElement('script');
     const to=setTimeout(()=>{cleanup();reject(new Error('timeout jsonp'))},12000);
     function cleanup(){clearTimeout(to);delete window[cb];sc.remove();}
     window[cb]=resp=>{cleanup();
@@ -880,28 +2002,65 @@ function viaJSONP(){
         const rows=[head,...tb.rows.map(r=>(r.c||[]).map(c=>c?(c.f!=null?c.f:(c.v!=null?String(c.v):'')):''))];
         resolve(rows);}catch(e){reject(e);} };
     sc.onerror=()=>{cleanup();reject(new Error('script bloqueado'))};
-    sc.src=GVIZ+'?headers=1&tqx=responseHandler:'+cb+'&t='+Date.now();
+    sc.src=GVIZ+'?headers=1&tqx=responseHandler:'+cb+extra+'&t='+Date.now();
     document.head.appendChild(sc);
   });
 }
 const okRows=r=>r && r.length>=2 && /marca temporal/i.test(r[0][0]||'');
-
-async function loadLive(){
-  const intentos=[
-    ['csv-publicado',()=>viaFetch(SHEET_CSV)],
-    ['jsonp-gviz',viaJSONP],
-    ['csv-gviz',()=>viaFetch(GVIZ+'?tqx=out:csv&headers=1')]
-  ];
-  LIVE.errores=[];
+async function leerRespuestas(){
+  const intentos=[['csv-publicado',()=>viaFetch(SHEET_CSV)],['jsonp-gviz',()=>viaJSONP('&gid=0')],['csv-gviz',()=>viaFetch(GVIZ+'?tqx=out:csv&headers=1&gid=0')]];
   for(const [nombre,fn] of intentos){
-    try{ const rows=await fn(); if(!okRows(rows)) throw new Error('formato inesperado'); applyLive(rows); LIVE.via=nombre; console.info('Excel leído vía',nombre); render(); return; }
-    catch(err){ LIVE.errores.push(nombre+': '+err.message); console.warn('Excel no disponible vía',nombre,err); }
+    try{ const rows=await fn(); if(!okRows(rows)) throw new Error('formato inesperado'); return rows; }
+    catch(err){ console.warn('Respuestas no disponibles vía',nombre,err); }
   }
-  LIVE.state='fail'; render();
+  return null;
+}
+/* La pestaña se busca con varios nombres (mayúsculas/minúsculas). Debe tener las columnas separadas:
+   si todo está en una sola columna (CSV pegado sin separar), NO se aplica y se avisa en la franja amarilla. */
+const NOMBRES_CORR=['CORRECCIONES','correcciones','Correcciones','ZUZENKETAK','zuzenketak'];
+function esCorrecciones(rows){
+  if(!rows||!rows[0]) return 'no';
+  const h=rows[0].map(x=>nrm(x));
+  if(h.some(x=>/^accion\b/.test(x)) && h.some(x=>/^entidad\b/.test(x))) return 'ok';
+  if(h.length<=2 && /id,entidad,acci/.test(h.join(','))) return 'una-columna';
+  return 'no';
+}
+async function leerCorrecciones(){
+  let formato=null;
+  for(const nom of NOMBRES_CORR){
+    const s='&sheet='+encodeURIComponent(nom);
+    for(const [via,fn] of [['jsonp-gviz',()=>viaJSONP(s)],['csv-gviz',()=>viaFetch(GVIZ+'?tqx=out:csv&headers=1'+s)]]){
+      try{ const rows=await fn(); const e=esCorrecciones(rows);
+        if(e==='ok'){ LIVE.corr='ok'; return rows; }
+        if(e==='una-columna'){ formato='una-columna'; break; }
+        break; /* respondió otra pestaña (Google devuelve la primera si el nombre no existe): probar el siguiente nombre */
+      }catch(err){ console.warn('Correcciones no disponibles vía',via,nom,err); }
+    }
+  }
+  LIVE.corr=formato||'no';
+  return null;
+}
+async function loadLive(){
+  if(window.__TEST_ROWS){ const c=window.__TEST_CORR||null; const e=esCorrecciones(c); LIVE.corr=e==='ok'?'ok':(e==='una-columna'?'una-columna':'no'); return finish(window.__TEST_ROWS, e==='ok'?c:null); }
+  const [rows,corr]=await Promise.all([leerRespuestas(),leerCorrecciones()]);
+  finish(rows,corr);
+}
+function finish(rows,corr){
+  if(!rows){ LIVE.state='fail'; render(); return; }
+  /* Primero las ocultaciones de CORRECCIONES, para no crear como «nuevas» las entidades ocultas. */
+  if(corr) corr.slice(1).forEach(r=>{ if(/ocultar/i.test(r[2]||'')&&!String(r[3]||'').trim()) OCULTAS.add(nrm(r[1]).replace(/\s+/g,'')); });
+  const n=applyLive(rows);
+  const nc=corr?applyCorrecciones(corr):null;
+  const now=new Date(), pad=x=>String(x).padStart(2,'0');
+  DATA.meta.respuestas=n;
+  DATA.meta.actualizado=`${pad(now.getDate())}/${pad(now.getMonth()+1)}/${now.getFullYear()}`;
+  LIVE.state='ok'; LIVE.n=n; LIVE.nc=nc; LIVE.hora=`${pad(now.getHours())}:${pad(now.getMinutes())}`;
+  if(LIVE.avisos.length) console.warn('Correcciones no aplicadas:\n'+LIVE.avisos.join('\n'));
+  render();
 }
 
 try{const s=localStorage.getItem('ibil-lang'); if(s==='eu'||s==='es'){LANG=s;document.querySelectorAll('[data-lang]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.lang===LANG)));}}catch(_){}
-const h=(location.hash||'').slice(1); if(['needs','itin','dir','profiles'].includes(h)) VIEW=h;
+const h0=(location.hash||'').slice(1); if(['needs','itin','dir','profiles'].includes(h0)) VIEW=h0;
 setView(VIEW);
 loadLive();
 </script>
